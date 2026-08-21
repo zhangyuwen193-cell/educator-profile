@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+  <base target="_top">
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="張語宸個人教育網站｜科技教育、偏鄉教育、國際教育與教育實踐">
+
+  <title>張語宸｜教育實踐者</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    rel="stylesheet">
+
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap"
+  rel="stylesheet">
+<style>
+
+/* ========================================
+   全站設定
+======================================== */
+
+:root {
+  --navy:#1f3553;
+  --navy2:#314c6e;
+  --gold:#b79a5b;
+  --soft:#f7f5ef;
+  --text:#29384b;
+  --muted:#6f7a88;
+  --line:#e8e3d8;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  font-family:"Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  font-size:18px;
+  color:var(--text);
+  background:#ffffff;
+}
+/* ========================================
+   中文大標題字體
+======================================== */
+
+.hero-name,
+.section-title,
+.quote {
+  font-family: "LXGW WenKai TC", "DFKai-SB", "BiauKai", serif;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   Navbar
+======================================== */
+
+.navbar {
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  padding:15px 0;
+}
+
+
+/* ★ 新增這一段：控制導覽列左右距離 */
+.navbar .container {
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+
+.navbar-brand {
+  font-weight:900;
+  color:var(--navy)!important;
+  cursor:pointer;
+}
+
+.brand-circle {
+  width:42px;
+  height:42px;
+  background:var(--navy);
+  color:white;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:10px;
+}
+
+.nav-link {
+  color:#59697b!important;
+  margin-left:12px;
+  cursor:pointer;
+}
+
+.nav-link:hover {
+  color:var(--gold)!important;
+}
+
+
+/* ========================================
+   Hero
+======================================== */
+
+.hero {
+  display:flex;
+  align-items:center;
+  padding:100px 0 35px;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(183,154,91,.17),
+      transparent 30%
+    ),
+    white;
+}
+
+.label {
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:4px;
+  font-size:.9rem;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.label::before {
+  content:"";
+  width:50px;
+  height:2px;
+  background:var(--gold);
+}
+
+.hero-name {
+  font-size:clamp(4rem,7vw,7rem);
+  font-weight:900;
+  letter-spacing:.08em;
+  color:var(--navy);
+  margin-bottom:10px;
+}
+
+.english-name {
+  letter-spacing:.38em;
+  font-weight:700;
+  margin-bottom:40px;
+}
+
+.hero-title {
+  font-size:clamp(1.7rem,3vw,2.5rem);
+  font-weight:900;
+  line-height:1.5;
+}
+
+.hero-description {
+  color:var(--muted);
+  line-height:2;
+  font-size:1.08rem;
+  max-width:650px;
+}
+
+.profile-photo {
+  width:70%;
+  height:650px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:35px;
+  box-shadow:0 25px 70px rgba(31,53,83,.18);
+
+  display:block;
+  margin-left:auto;
+}
+.hero-right {
+  transform: translateX(-20px);
+}
+@media (min-width: 992px) {
+
+  .hero-left {
+    transform:translateX(80px);
+  }
+
+  /* 電腦版照片位置 */
+  .hero-right {
+    transform:translate(-100px, -450px);
+  }
+
+}
+
+/* ========================================
+   首頁個人資訊
+======================================== */
+
+.info-row {
+  display: grid;
+  grid-template-columns: 42px 70px 1fr;
+  align-items: start;
+  column-gap: 12px;
+  margin-bottom: 18px;
+}
+
+.info-icon {
+  width: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-title {
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.info-text {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.quick-info {
+  margin-top: 35px;
+  padding-top: 10px;
+}
+/* 
+========================================
+   統計
+======================================== */
+
+.stats {
+  margin-top:35px;
+}
+
+.stat {
+  border-left:3px solid var(--gold);
+  padding-left:15px;
+}
+
+.stat-number {
+  font-size:1.8rem;
+  font-weight:900;
+  color:var(--navy);
+}
+
+.stat-text {
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+
+/* ========================================
+   Section
+======================================== */
+
+section {
+  padding:100px 0;
+  scroll-margin-top:85px;
+}
+
+.soft {
+  background:var(--soft);
+}
+
+.section-title {
+  font-size:clamp(2.2rem,4vw,3.2rem);
+  font-weight:900;
+  color:var(--navy);
+  margin-bottom:20px;
+}
+
+.section-description {
+  color:var(--muted);
+  line-height:2;
+}
+
+
+/* ========================================
+   Education
+======================================== */
+
+.education-card {
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  height:100%;
+  border:1px solid var(--line);
+}
+
+.education-year {
+  color:var(--gold);
+  font-weight:800;
+  font-size:.85rem;
+  letter-spacing:2px;
+}
+
+
+/* ========================================
+   Experience
+======================================== */
+
+.exp-card {
+  background:white;
+  border-radius:22px;
+  padding:30px;
+  height:100%;
+  border:1px solid rgba(0,0,0,.06);
+  transition:.3s;
+}
+
+.exp-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(31,53,83,.10);
+}
+
+.exp-icon {
+  width:52px;
+  height:52px;
+  border-radius:15px;
+  background:#f2ecdf;
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  margin-bottom:20px;
+}
+
+.exp-item {
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+}
+
+.exp-item:last-child {
+  border-bottom:0;
+}
+
+.exp-date {
+  color:var(--gold);
+  font-size:.85rem;
+  font-weight:700;
+  margin-top:4px;
+}
+
+
+/* ========================================
+   Awards
+======================================== */
+
+.award-item {
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  border:1px solid var(--line);
+  height:100%;
+}
+
+
+/* ========================================
+   International
+======================================== */
+
+.country {
+  font-size:2rem;
+}
+
+.international-card {
+  padding:30px;
+  border-radius:22px;
+  background:white;
+  height:100%;
+  border:1px solid var(--line);
+}
+
+
+/* ========================================
+   News
+======================================== */
+
+.news-card {
+  display:block;
+  height:auto;
+  padding:28px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  text-decoration:none;
+  color:var(--text);
+  transition:.3s;
+}
+
+.news-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(31,53,83,.10);
+  color:var(--text);
+}
+
+.news-source {
+  color:var(--gold);
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+
+.news-title {
+  font-size:1.2rem;
+  font-weight:800;
+  line-height:1.65;
+  margin-bottom:18px;
+}
+
+.news-more {
+  color:var(--navy);
+  font-weight:700;
+  font-size:.9rem;
+}
+
+.news-card:hover .news-more {
+  color:var(--gold);
+}
+/* ========================================
+   Philosophy
+======================================== */
+
+.philosophy {
+  background:var(--navy);
+  color:white;
+}
+
+.philosophy .label {
+  justify-content:center;
+  color:#d8bf89;
+}
+
+.philosophy .label::before {
+  background:#d8bf89;
+}
+
+.quote {
+  text-align:center;
+  font-size:clamp(1.6rem, 3vw, 2.7rem);
+  font-weight:800;
+  line-height:1.5;
+  white-space:nowrap;
+}
+
+.quote span {
+  color:#d8bf89;
+}
+
+
+/* ========================================
+   Footer
+======================================== */
+
+footer {
+  background:#16283f;
+  color:#aeb9c5;
+  padding:45px;
+  text-align:center;
+}
+
+footer strong {
+  color:white;
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media(max-width:991px) {
+
+  /* 手機版首頁左側文字 */
+  .hero-left {
+    transform:translateX(20px);
+  }
+
+  /* 手機版照片位置 */
+  .hero-right {
+    transform:translate(-100px, -380px);
+  }
+/* 手機版導覽列：取消漢堡選單，橫向滑動 */
+.navbar .container {
+  flex-wrap: nowrap;
+}
+/* 手機版各區塊加寬 */
+section .container {
+  max-width: 100% !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+/* 手機版卡片內文字放大 */
+.education-card,
+.exp-card,
+.international-card,
+.award-item,
+.news-card {
+  font-size: 1.8rem !important;
+}
+/* 手機版卡片標題 */
+.education-card h4,
+.exp-card h3,
+.international-card h3 {
+  font-size: 2.0rem !important;
+}
+
+.navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
+
+.navbar-nav {
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.navbar-toggler {
+  display: none !important;
+}
+  .profile-photo {
+    height:520px;
+    margin-top:40px;
+  }
+
+  .nav-link {
+    margin-left:0;
+    padding:10px 0;
+  }
+
+  /* 手機版教育理念 */
+  .quote {
+    font-size:2.8vw !important;
+    white-space:nowrap !important;
+    width:50%;
+    text-align:center;
+    transform:translateX(100px) !important;
+  }
+  /* 手機版：現職內容強制不換行 */
+.quick-info .info-text {
+  white-space: nowrap !important;
+}
+
+}
+body {
+ font-size: 20px;
+}
+
+/* 首頁 */
+.hero-description {
+  font-size: 1.3rem;
+}
+
+.info-title,
+.info-text {
+  font-size: 1.3rem;
+}
+
+/* 個人簡介 */
+.section-description {
+  font-size: 1.3rem !important;
+}
+
+/* 學歷 */
+.education-year {
+  font-size: 1rem;
+}
+
+/* 學校名稱 */
+.education-card h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* 學校下面的說明 */
+.education-card p {
+  font-size: 1.25rem;
+}
+
+/* 經歷 */
+.exp-card {
+  font-size: 1.3rem;
+}
+
+.exp-date {
+  font-size: 1rem;
+}
+
+/* 教育見習 */
+.international-card p {
+  font-size: 1.15rem;
+}
+
+/* 獲獎與認證 */
+.award-item {
+  font-size: 1.3rem;
+}
+
+/* 新聞 */
+.news-source {
+  font-size: 1rem;
+}
+
+.news-title {
+  font-size: 1.5rem;
+}
+
+.news-more {
+  font-size: 1.05rem;
+}
+
+/* 導覽列 */
+.nav-link {
+  font-size: 1.05rem;
+}
+
+
+/* 楷體標題全部加粗 */
+.hero-name,
+.section-title,
+.quote {
+  font-family: "LXGW WenKai TC", "DFKai-SB", "BiauKai", serif !important;
+  font-weight: 700 !important;
+  -webkit-text-stroke: 1.05px currentColor;
+}
+/* 內文字體稍微加粗 */
+.hero-description,
+.section-description,
+.info-text,
+.education-card p,
+.exp-card,
+.international-card p,
+.award-item,
+.news-more {
+  font-weight: 700 !important;
+}
+
+/* 經歷名稱粗細 */
+.exp-item strong {
+  font-weight: 600 !important;
+}
+
+/* 經歷日期粗細 */
+.exp-date {
+  font-weight: 600 !important;
+}
+
+/* 平板版首頁資訊強制不換行 */
+@media (min-width: 992px) and (max-width: 1366px) {
+  .quick-info .info-text {
+    white-space: nowrap !important;
+  }
+}
+/* 教育哲學內文放大 */
+.philosophy p {
+  font-size: 1.6rem !important;
+  line-height: 2 !important;
+}
+
+/* 電腦版：個人簡介內文放大 */
+@media (min-width: 992px) {
+  #about p {
+    font-size: 1.7rem !important;
+    line-height: 2 !important;
+  }
+}
+
+/* ========================================
+   電腦版設定
+======================================== */
+@media (min-width: 992px) {
+
+  /* 下面各區塊整體加寬 */
+  #about .container,
+  #education .container,
+  #experience .container,
+  #awards .container,
+  #international .container,
+  #news .container {
+    max-width: 1800px !important;
+  }
+
+  /* 首頁名字 */
+  .hero-name {
+    font-size: 7.7rem !important;
+  }
+
+  /* 英文名字 */
+  .english-name {
+    font-size: 1.4rem !important;
+  }
+
+  /* 心存善念 盡力而為 */
+  .hero-title {
+    font-size: 2.8rem !important;
+  }
+
+  /* 首頁介紹 */
+  .hero-description {
+    font-size: 1.7rem !important;
+  }
+
+  /* 現職、學歷、專長、信箱 */
+  .info-title {
+    font-size: 2rem !important;
+  }
+
+  .info-text {
+    font-size: 1.7rem !important;
+  }
+
+  /* 學歷英文分類 */
+  #education .education-year {
+    font-size: 1.25rem !important;
+  }
+
+  /* 學校名稱 */
+  #education .education-card h4 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* 學校下面說明 */
+  #education .education-card p {
+    font-size: 1.6rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* 經歷 */
+  #experience .exp-card {
+    font-size: 1.7rem !important;
+  }
+
+  #experience .exp-card h3 {
+    font-size: 1.9rem !important;
+  }
+
+  /* 教育見習 */
+  #international .international-card {
+    font-size: 2.2rem !important;
+  }
+
+  /* 獲獎與專業認證 */
+  #awards .award-item {
+    font-size: 1.6rem !important;
+  }
+
+  /* 新聞 */
+  #news .news-title {
+    font-size: 1.8rem !important;
+  }
+
+  #news .news-source,
+  #news .news-more {
+    font-size: 1.5rem !important;
+  }
+
+}
+
+
+/* ========================================
+   經歷：圖示與標題並排
+======================================== */
+
+.exp-card {
+  position: relative;
+}
+
+.exp-card .exp-icon {
+  display: inline-flex;
+  margin-bottom: 0;
+  margin-right: 18px;
+  vertical-align: middle;
+}
+
+.exp-card h3 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+
+/* ========================================
+   教育見習：手機直排
+======================================== */
+
+@media (max-width: 767px) {
+
+  #international .row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #international .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  #international .international-card {
+    width: 100% !important;
+  }
+
+}
+@media (max-width: 767px) {
+  #international .row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #international .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  #international .international-card {
+    width: 100% !important;
+  }
+}
+
+/* 首頁＋個人簡介灰字改黑色 */
+.hero-description,
+.info-text,
+#about .section-description {
+  color: #222222 !important;
+}
+/* 電腦版：首頁現職、學歷、專長、信箱全部不換行 */
+@media (min-width: 992px) {
+  .quick-info .info-text {
+    white-space: nowrap !important;
+  }
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ======================================
+NAVBAR
+====================================== -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+  <div class="container">
+
+    <a
+      class="navbar-brand"
+      href="javascript:void(0)"
+      onclick="goToSection('home')">
+
+      <span class="brand-circle">
+        張
+      </span>
+
+      張語宸
+
+    </a>
+
+
+    
+
+
+    <div class="navbar-collapse" id="menu">
+
+      <ul class="navbar-nav ms-auto">
+
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="goToSection('about')">
+            個人簡介
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="goToSection('education')">
+            學歷
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="goToSection('experience')">
+            經歷
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="goToSection('awards')">
+            獲獎與認證
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="goToSection('international')">
+            教育見習
+          </a>
+        </li>
+
+
+
+
+        <li class="nav-item">
+        <a
+          class="nav-link"
+          href="javascript:void(0)"
+          onclick="goToSection('news')">
+           新聞
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="goToSection('philosophy')">
+            教育理念
+          </a>
+        </li>
+
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- ======================================
+HERO
+====================================== -->
+
+<header class="hero" id="home">
+
+  <div class="container-fluid hero-container">
+
+    <div class="row align-items-center g-5">
+
+
+      <!-- ==================================
+           左半部：個人資訊
+      =================================== -->
+
+      <div class="col-6 hero-left">
+
+
+        <div class="label">
+          EDUCATOR PROFILE
+        </div>
+
+
+        <h1 class="hero-name">
+          張語宸
+        </h1>
+
+
+        <div class="english-name">
+          JHANG,YU-CHEN 
+        </div>
+
+
+        <h2 class="hero-title">
+         心存善念
+         盡力而為
+        </h2>
+
+
+        <p class="hero-description">
+
+          我相信教育不只是知識傳遞，<br>
+          而是讓學生看到自己的光芒。
+        </p>
+
+
+        <!-- ==================================
+             個人資訊
+        =================================== -->
+
+        <div class="quick-info">
+
+
+          <!-- 現職 -->
+
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-person"></i>
+            </div>
+
+            <div class="info-title">
+              現職
+            </div>
+
+            <div class="info-text">
+
+
+              臺師大PASSION學友會｜會長<br>
+              臺師大科技與工程學院｜學生代表<br>
+              臺師大師資培育會議｜學生代表<br>
+              臺師大學生事務會議｜學生代表<br>
+              臺師大校園景觀規畫小組｜學生代表<br>
+              臺師大教學媒體與應用(教)｜教學助理<br>
+              臺師大職業教育訓練暨生涯規劃(教)｜教學助理<br>
+              臺師大體育(扯鈴)｜教學助理<br>
+              臺師大科技系116級畢業專展｜總務組長<br>
+              臺師大師資生聯會｜顧問(退休會長)<br>
+              臺北市文昌國小扯鈴社｜教練
+
+            </div>
+
+          </div>
+          
+          <!-- 學歷 -->
+
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+
+            <div class="info-title">
+              學歷
+            </div>
+
+            <div class="info-text">
+              國立臺灣師範大學｜科技應用與人力資源發展學系四年級
+              <br>
+              國立臺灣師範大學｜小學師資培育公費生<br>
+              國立臺灣師範大學｜中等二階師培生<br>
+              國立臺灣師範大學｜雙語師資培育生<br>
+              國立臺灣師範大學｜PASSION偏鄉優質教育學分學程 修畢<br>
+              國立中科實驗高級中學<br>
+              臺中市大雅區陽明國民小學
+              <br>
+            </div>
+
+          </div>
+
+          <!-- 專長 -->
+
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-star"></i>
+            </div>
+
+            <div class="info-title">
+              專長
+            </div>
+
+            <div class="info-text">
+              偏鄉教育、扯鈴、跳繩、長跑、健身、自行車
+            </div>
+
+          </div>
+
+
+          <!-- Email -->
+
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+
+            <div class="info-title">
+              信箱
+            </div>
+
+            <div class="info-text">
+
+              <a href="mailto:41271106H@ntnu.edu.tw">
+                41271106H@ntnu.edu.tw
+              </a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ==================================
+           右半部：只保留這一張大照片
+      =================================== -->
+
+     <div class="col-6 hero-right">
+
+        <div class="photo-wrapper">
+
+          <img
+          src="https://drive.google.com/thumbnail?id=1sSdpO1-4pQKcyrdKAppt0qUFcLQikh1d&sz=w1600"
+          class="profile-photo"
+          alt="張語宸">
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ======================================
+ABOUT
+====================================== -->
+
+<section id="about" class="soft">
+
+  <div class="container">
+
+    <div class="label">
+      ABOUT ME
+    </div>
+
+
+    <div class="row g-5">
+
+
+      <div class="col-lg-7">
+
+        <h2 class="section-title">
+          個人簡介
+        </h2>
+
+      </div>
+
+
+      <div class="col-lg-10">
+
+        <p class="section-description fs-5">
+
+          出生於臺中市大雅區的農村，在田野與自然中成長。高中就讀中科實中，物理總成績名列全校前1%、數學前4%，平時也喜歡協助同學理解理科問題，並在分享與教學的過程中，逐漸找到自己對教育的熱忱。高中期間擔任志工康輔社社長，從服務中體會與人連結的價值。進入大學後，持續投入偏鄉營隊、扯鈴教學與國際交流，在不同教育場域中實踐所學。我相信，教育不只是知識的傳遞，更是陪伴孩子探索世界、發現自己的過程。
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+EDUCATION
+====================================== -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="label">
+      EDUCATION
+    </div>
+
+
+    <h2 class="section-title">
+      學歷
+    </h2>
+
+
+    <div class="row g-4 mt-3">
+
+
+      <div class="col-lg-4">
+
+        <div class="education-card">
+
+          <div class="education-year">
+            ELEMENTARY SCHOOL
+          </div>
+
+          <h4 class="mt-3">
+            臺中市大雅區陽明國民小學
+          </h4>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-4">
+
+        <div class="education-card">
+
+          <div class="education-year">
+            SECONDARY EDUCATION
+          </div>
+
+          <h4 class="mt-3">
+            國立中科實驗高級中學
+          </h4>
+
+          <p class="text-secondary">
+            國中部<br>
+            高中部市長獎畢業
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-4">
+
+        <div class="education-card">
+
+          <div class="education-year">
+            UNIVERSITY
+          </div>
+
+          <h4 class="mt-3">
+            國立臺灣師範大學
+          </h4>
+
+          <p class="text-secondary">
+            科技應用與人力資源發展學系
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+EXPERIENCE
+====================================== -->
+
+<section id="experience" class="soft">
+
+  <div class="container">
+
+    <div class="label">
+      EXPERIENCE
+    </div>
+
+
+    <h2 class="section-title">
+      經歷
+    </h2>
+
+
+    <div class="row g-4 mt-3">
+
+
+
+      <!-- 領導經歷 -->
+
+      <div class="col-lg-6 order-lg-1">
+
+        <div class="exp-card">
+
+          <div class="exp-icon">
+            <i class="bi bi-people"></i>
+          </div>
+
+
+          <h3>
+            社團與幹部經歷
+          </h3>
+          <div class="exp-item">
+
+            <strong>
+              臺師大PASSION學友會｜會長
+            </strong>
+
+            <div class="exp-date">
+              2026.08 – 至今
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大科技與工程學院｜學生代表
+            </strong>
+
+            <div class="exp-date">
+              2026.08 – 至今
+            </div>
+
+          </div>
+          <div class="exp-item">
+
+            <strong>
+              臺師大師資培育會議｜學生代表
+            </strong>
+
+            <div class="exp-date">
+              2026.08 – 至今
+            </div>
+
+          </div>
+          <div class="exp-item">
+            <strong>
+              臺師大學生事務會議｜學生代表
+            </strong>
+
+            <div class="exp-date">
+              2026.08 – 至今
+            </div>
+
+
+          </div>
+          <div class="exp-item">
+            <strong>
+              臺師大校園景觀規畫小組｜學生代表
+            </strong>
+
+            <div class="exp-date">
+              2026.08 – 至今
+            </div>
+
+          </div>
+          <div class="exp-item">
+            <strong>
+              臺師大科技系116級畢業專展｜總務組長
+            </strong>
+
+            <div class="exp-date">
+              2026.02 – 至今
+            </div>
+          </div>
+
+         <div class="exp-item">
+
+            <strong>
+              臺師大師資生聯會｜會長
+            </strong>
+
+            <div class="exp-date">
+              2025.07 – 2026.07
+            </div>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大師資生聯會｜副會長
+            </strong>
+
+            <div class="exp-date">
+              2024.08 – 2025.07
+            </div>
+
+          </div>
+          <div class="exp-item">
+
+            <strong>
+              臺師大臺中南投文化週｜總籌
+            </strong>
+
+            <div class="exp-date">
+              2024.09 – 2025.05
+            </div>
+
+
+
+          </div>
+
+
+          <div class="exp-item">
+            <strong>
+              臺師大臺中南投同鄉校友會｜學術股長
+            </strong>
+
+            <div class="exp-date">
+              2024.08 – 2025.07
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大中友會中友之夜｜扯鈴股長
+            </strong>
+
+            <div class="exp-date">
+              2024.02 – 2024.05
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大臺中南投同鄉校友會幹部訓練｜生活機動股長
+            </strong>
+
+            <div class="exp-date">
+              2025.06 – 2025.08
+            </div>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大臺中南投文化週｜薔薇股員
+            </strong>
+
+            <div class="exp-date">
+              2023.09 – 2024.05
+            </div>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大科技系新生宿營｜隊輔
+            </strong>
+
+            <div class="exp-date">
+              2024.07 – 2024.09
+            </div>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              臺師大科技系學會｜總務部員
+            </strong>
+
+            <div class="exp-date">
+              2024.08 – 2025.07
+            </div>
+          </div>
+          <div class="exp-item">
+
+            <strong>
+              臺師大科技系｜學生代表
+            </strong>
+
+            <div class="exp-date">
+              2023.09 – 2023.12
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+            <strong>
+              臺師大科技系學會｜代表
+            </strong>
+            <div class="exp-date">
+              2024.02 – 2024.6
+            </div>
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              國立中科實驗高級中學 Uni志工康輔社｜社長
+            </strong>
+
+            <div class="exp-date">
+              2021.08 – 2022.06
+            </div>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              陽明國小｜自治市長
+            </strong>
+
+            <div class="exp-date">
+              2015.08 – 2016.07
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 教學經歷 -->
+
+      <div class="col-lg-6 order-lg-2">
+
+        <div class="exp-card">
+
+          <div class="exp-icon">
+            <i class="bi bi-mortarboard"></i>
+          </div>
+
+
+          <h3>
+            教學經歷
+          </h3>
+
+
+          <div class="exp-item">
+
+            <strong>
+              國立臺灣師範大學 教學媒體與應用(教)｜教學助理
+            </strong>
+
+            <div class="exp-date">
+              2026.9 – 至今
+            </div> 
+
+
+          </div>
+          <div class="exp-item">
+            <strong>
+              國立臺灣師範大學 職業教育訓練暨生涯規劃(教)｜教學助理
+            </strong>
+
+            <div class="exp-date">
+              2026.9 – 至今
+            </div> 
+  
+          </div>  
+          <div class="exp-item">
+            <strong>
+              國立臺灣師範大學 體育(扯鈴)｜教學助理
+            </strong>
+
+            <div class="exp-date">
+              2026.9 – 至今
+            </div> 
+          </div> 
+            <div class="exp-item">
+            <strong>
+              臺北市文昌國小扯鈴社｜教練
+            </strong>
+            <div class="exp-date">
+              2024.09 – 至今
+            </div>
+          </div>
+          <div class="exp-item">
+            <strong>
+              國立臺灣師範大學 國音及說話(小教)｜教學助理
+            </strong>
+
+            <div class="exp-date">
+              2026.2 – 2026.6
+            </div> 
+           
+           </div>  
+          <div class="exp-item">
+            <strong>
+              國立臺灣師範大學史懷哲精神服務隊｜班導｜體育｜話劇老師
+            </strong>
+
+            <p class="exp-date">
+              2026.02 – 2026.8
+          </div> 
+         <div class="exp-item">
+            <strong>
+              臺北市民權國小扯鈴社｜實習教練
+            </strong>
+            <div class="exp-date">
+              2024.02 – 2024.06
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <strong>
+              臺北市古亭國小扯鈴社｜助理教練
+            </strong>
+            <div class="exp-date">
+              2024.02 – 2024.06
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <strong>
+              臺北市立人國小扯鈴社｜教練
+            </strong>
+            <div class="exp-date">
+              2024.04 – 2024.06
+            </div>
+          </div>
+
+          <div class="exp-item">  
+            <strong>
+              新北市安坑國小 STEAM晨光時間｜助教
+            </strong>
+
+            <div class="exp-date">
+              2024.11 – 2024.12
+            </div>
+
+          </div>
+          
+
+
+          <div class="exp-item">
+
+            <strong>
+              新北市安坑國小 STEAM晨光時間｜指導老師
+            </strong>
+
+            <div class="exp-date">
+              2025.03 – 2025.06
+            </div>
+
+          </div>
+          <div class="exp-item">
+
+            <strong>
+              臺北市古亭國小｜教學實習生
+            </strong>
+
+            <div class="exp-date">
+              2025.12
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              花蓮縣東里國中｜偏鄉數學實習教師
+            </strong>
+
+            <div class="exp-date">
+              2025.07
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              花蓮縣東里國中｜遠距數學實習教師
+            </strong>
+
+            <div class="exp-date">
+              2025.09 – 2026.06
+            </div>
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              教育部數位學伴計畫｜大學伴
+            </strong>
+
+            <div class="exp-date">
+              2025.03 – 2026.01
+            </div>
+
+          </div>
+
+          <div class="exp-item">
+
+            <strong>
+              臺北市古亭國小｜晨光元氣輔導志工
+            </strong>
+
+            <div class="exp-date">
+              2025.09 – 2026.06
+            </div>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              韓國京仁教育大學附設小學｜臺灣文化課程教學
+            </strong>
+
+            <div class="exp-date">
+              2026.03.31
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 營隊經歷 -->
+
+      <div class="col-lg-6 order-lg-3">
+
+        <div class="exp-card">
+
+          <div class="exp-icon">
+            <i class="bi bi-backpack"></i>
+          </div>
+
+
+          <h3>
+            營隊與教育服務
+          </h3>
+
+
+          <div class="exp-item">
+
+            <strong>
+              2024 臺師大中友會返鄉服務隊
+            </strong>
+
+            <p class="mb-1">
+              活動股員｜臺中市后里區泰安國小
+            </p>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              2025 臺師大中友會返鄉服務隊
+            </strong>
+
+            <p class="mb-1">
+              機動股長｜臺中市后里區泰安國小
+            </p>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              2026 臺師大中友會返鄉服務隊
+            </strong>
+
+            <p class="mb-1">
+              機動股長｜臺中市清水區吳厝國小
+            </p>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              2025 PASSION 三週暑期實習
+            </strong>
+
+            <p class="mb-1">
+              數學老師｜花蓮縣東里國中
+            </p>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              2026 認識臺灣夏令營
+            </strong>
+
+            <p class="mb-1">
+              隊輔、扯鈴老師｜廣東省東莞台商學校
+            </p>
+
+          </div>
+
+
+          <div class="exp-item">
+
+            <strong>
+              2026 國立臺灣師範大學史懷哲精神服務隊
+            </strong>
+
+            <p class="mb-1">
+              課程組長、班導、體育老師、話劇老師｜新北市深坑國小
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- 講師 -->
+
+      <div class="col-lg-6 order-lg-4">
+
+        <div class="exp-card">
+
+          <div class="exp-icon">
+            <i class="bi bi-mic"></i>
+          </div>
+
+
+          <h3>
+            講師與其他經歷
+          </h3>
+
+
+    <div class="exp-item">
+      <strong>
+        2024 中華民國工業科技教育學會「我們正步入一個前所未有的科技教育時代」研討會｜講師
+      </strong>
+    </div>
+
+    <div class="exp-item">
+      <strong>
+        2025 臺師大臺中南投同鄉校友會扯鈴例會｜講師
+      </strong>
+    </div>
+
+    <div class="exp-item">
+      <strong>
+        2025 臺師大臺中南投同鄉校友會板書例會｜講師
+      </strong>
+    </div>
+
+    <div class="exp-item">
+      <strong>
+        2026 臺師大社團負責人研習營經驗傳承與實例分享｜講師
+      </strong>
+    </div>
+
+    <div class="exp-item">
+      <strong>
+        2026 臺師大臺中南投同鄉校友會板書例會｜講師
+      </strong>
+    </div>
+
+    <div class="exp-item">
+      <strong>
+        2025 臺師大臺中南投同鄉校友會幹部訓練團體動力培訓｜講師
+      </strong>
+    </div>
+
+    <div class="exp-item">
+      <strong>
+        2026 臺師大中友會返鄉服務隊返服培訓營團體動力培訓｜講師
+      </strong>
+ </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+AWARDS
+====================================== -->
+
+<section id="awards" class="soft">
+
+  <div class="container">
+
+    <div class="label">
+      HONORS & CERTIFICATIONS
+    </div>
+
+
+    <h2 class="section-title">
+      獲獎與專業認證
+    </h2>
+
+
+    <h3 class="mt-5 mb-4">
+      獲獎經歷
+    </h3>
+
+
+    <div class="row g-3">
+
+
+      <div class="col-lg-6">
+        <div class="award-item">
+          🏆 114-1 臺師大師資生教學實務能力檢測教案｜第一名
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="award-item">
+          🏆 114-2 臺師大師資生教學實務能力檢測教學演示｜佳作
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="award-item">
+          💻 臺師大程式設計通識課程｜專題佳作
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="award-item">
+          ⭐ 114-2 STAR 星辰獎學金
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="award-item">
+          🥇 教育部體育署113學年度全國各級學校民俗體育競賽<br>
+          大專男子組繞腳競速賽｜特優
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="award-item">
+          🥈 教育部體育署113學年度全國各級學校民俗體育競賽<br>
+          大專男子組雙鈴單項賽｜優等
+        </div>
+      </div>
+
+
+      <div class="col-lg-4">
+        <div class="award-item">
+          臺中市109學年度模範生
+        </div>
+      </div>
+
+
+      <div class="col-lg-4">
+        <div class="award-item">
+          臺中市110學年度模範生
+        </div>
+      </div>
+
+
+      <div class="col-lg-4">
+        <div class="award-item">
+          臺中市111學年度模範生
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <h3 class="mt-5 mb-4">
+      證照與認證
+    </h3>
+
+
+    <div class="row g-3">
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-patch-check me-2"></i>
+
+          師資生教學實務能力檢測
+          「教學檔案暨課程方針設計」通過
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-patch-check me-2"></i>
+
+          師資生教學實務能力檢測
+          「國小試教能力」通過
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-book me-2"></i>
+
+          非現職教師學習扶助師資
+          20小時知能研習認證合格
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-translate me-2"></i>
+
+          多益840
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-heart-pulse me-2"></i>
+
+          EMT-1 初級救護技術員證書
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-award me-2"></i>
+
+          中華民國民俗體育運動協會
+          丙級教練證
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-people me-2"></i>
+
+          臺師大社團負責人研習營結業
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-stopwatch me-2"></i>
+
+          2026 國家地理馬拉松
+          半馬組 02:00:28
+
+        </div>
+
+      </div>
+            <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-stopwatch me-2"></i>
+
+          自行車一日北中196公里
+
+        </div>
+      </div>
+                  <div class="col-md-6">
+
+        <div class="award-item">
+
+          <i class="bi bi-stopwatch me-2"></i>
+
+          自行車環騎臺北99公里
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ======================================
+INTERNATIONAL
+====================================== -->
+
+<section id="international">
+
+  <div class="container">
+
+    <div class="label">
+      INTERNATIONAL EXPERIENCE
+    </div>
+
+
+    <h2 class="section-title">
+      教育見習
+    </h2>
+
+
+    <div class="row g-4 mt-3">
+
+
+      <div class="col-12 col-md-4">
+
+        <div class="international-card">
+
+          <div class="country">
+            🇯🇵
+          </div>
+
+          <h3 class="mt-3">
+            <strong>日本</strong>
+          </h3>
+
+          <h5>
+            九州大學
+          </h5>
+
+          <p class="text-secondary">
+            113-1 日本九州大學機械手臂國際交流，
+            進行科技學習、英語學術交流與成果發表。
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-12 col-md-4">
+
+        <div class="international-card">
+
+          <div class="country">
+            🇰🇷
+          </div>
+
+          <h3 class="mt-3">
+            <strong>韓國</strong>
+          </h3>
+
+          <h5>
+            首爾大學・京仁教育大學
+          </h5>
+
+          <p class="text-secondary">
+            114-2 韓國教育見習，
+            並於京仁教育大學附設小學進行臺灣文化課程教學。
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-12 col-md-4">
+
+        <div class="international-card">
+
+          <div class="country">
+            🇨🇳
+          </div>
+
+          <h3 class="mt-3">
+            <strong>中國大陸</strong>
+          </h3>
+
+          <h5>
+            東莞台商學校
+          </h5>
+
+          <p class="text-secondary">
+            114-3 東莞台商學校教育見習，
+            並於認識臺灣夏令營擔任隊輔與扯鈴老師，
+            傳授台灣文化。
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ======================================
+NEWS
+====================================== -->
+
+<section id="news">
+
+  <div class="container">
+
+    <div class="label">
+      EDUCATION NEWS
+    </div>
+
+    <h2 class="section-title">
+      教育新聞
+    </h2>
+
+    <p class="section-description mb-5">
+      記錄我為教育發聲的成果。
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <!-- 新聞 1 -->
+      <div class="col-lg-6">
+
+        <a
+          class="news-card"
+          href="https://www.thenewslens.com/article/260440"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="news-source">
+            THE NEWS LENS 關鍵評論網
+          </div>
+
+          <div class="news-title">
+            「缺醫師怎不找代理醫師？」教育部新政解教師荒，
+            師培生嘆：教育要變服務業了嗎？
+          </div>
+
+          <div class="news-more">
+            閱讀報導
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- 新聞 2 -->
+      <div class="col-lg-6">
+
+        <a
+          class="news-card"
+          href="https://www.cna.com.tw/news/ahel/202509250102.aspx"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="news-source">
+            中央通訊社 CNA
+          </div>
+
+          <div class="news-title">
+            教師節前夕師資生嘆濫訴、行政負擔　棄教程者增
+          </div>
+
+          <div class="news-more">
+            閱讀報導
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- 新聞 3 -->
+      <div class="col-lg-6">
+
+        <a
+          class="news-card"
+          href="https://flipedu.parenting.com.tw/article/010786"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="news-source">
+            翻轉教育
+          </div>
+
+          <div class="news-title">
+            台師大師培新制上路：128學分可完成師培，
+            未來孩子的老師會不一樣嗎？
+          </div>
+
+          <div class="news-more">
+            閱讀報導
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </div>
+
+        </a>
+
+      </div>
+
+
+        <!-- 新聞 4 -->
+      <div class="col-lg-6">
+
+        <a
+          class="news-card"
+          href="https://flipedu.parenting.com.tw/article/010775"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="news-source">
+            翻轉教育
+          </div>
+
+          <div class="news-title">
+            逾三成師培生不想當老師！調查揭三大壓力：
+            薪資低、風險高、制度不穩
+          </div>
+
+          <div class="news-more">
+            閱讀報導
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- 教育新聞 5 -->
+      <div class="col-lg-6">
+
+        <a
+          class="news-card"
+          href="https://www.ner.gov.tw/Program/Episode/26051611232580265/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="news-source">
+            國立教育廣播電臺
+          </div>
+
+          <div class="news-title">
+            師培？失陪？師資生真實心聲
+          </div>
+
+          <div class="news-more">
+            閱讀報導
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  <!-- ======================================
+     師大新聞
+====================================== -->
+
+<div class="mt-5 pt-4">
+
+  <div class="label">
+    NTNU NEWS
+  </div>
+
+  <h3 class="section-title" style="font-size:2rem;">
+    師大新聞
+  </h3>
+
+  <p class="section-description mb-4">
+    記錄我上師大新聞。
+  </p>
+
+</div>
+
+
+<div class="row g-4">
+
+
+  <!-- 師大新聞 1 -->
+  <div class="col-lg-6">
+
+    <a
+      class="news-card"
+      href="https://pr.ntnu.edu.tw/news/index.php?mode=data&id=24137"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      <div class="news-source">
+        國立臺灣師範大學
+      </div>
+
+      <div class="news-title">
+        師培學院師資生教學實務能力檢測頒獎
+        專業先行培育未來教育中堅
+      </div>
+
+      <div class="news-more">
+        閱讀報導
+        <i class="bi bi-arrow-up-right ms-1"></i>
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <!-- 師大新聞 2 -->
+   <div class="col-lg-6">
+
+  <a
+    class="news-card"
+    href="https://pr.ntnu.edu.tw/news/index.php?id=23711&mode=data"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    <div class="news-source">
+      國立臺灣師範大學
+    </div>
+
+    <div class="news-title">
+      臺師大PASSION暑期實習結合國際志工
+      開啟偏鄉教育學習新頁
+    </div>
+
+    <div class="news-more">
+      閱讀報導
+      <i class="bi bi-arrow-up-right ms-1"></i>
+    </div>
+
+  </a>
+
+</div>
+
+
+  <!-- 師大新聞 3 -->
+  <div class="col-lg-6">
+
+    <a
+      class="news-card"
+      href="https://pr.ntnu.edu.tw/ntnunews/index.php?mode=data&id=23110&type_id=74"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      <div class="news-source">
+        國立臺灣師範大學
+      </div>
+
+      <div class="news-title">
+        工業科技教育學會113年會
+        聚焦科技教育未來趨勢
+      </div>
+
+      <div class="news-more">
+        閱讀報導
+        <i class="bi bi-arrow-up-right ms-1"></i>
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <!-- 師大新聞 4 -->
+  <div class="col-lg-6">
+
+    <a
+      class="news-card"
+      href="https://pr.ntnu.edu.tw/news/index.php?mode=data&id=22998"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      <div class="news-source">
+        國立臺灣師範大學
+      </div>
+
+      <div class="news-title">
+        科技系師生攜手高中生赴日本九州大學交流
+        融入Design Pitch的科技教育導向國際交流
+      </div>
+
+      <div class="news-more">
+        閱讀報導
+        <i class="bi bi-arrow-up-right ms-1"></i>
+      </div>
+
+    </a>
+
+  </div>
+
+
+ </div>
+</div>
+
+</section>
+
+<!-- ======================================
+PHILOSOPHY
+====================================== -->
+
+<section id="philosophy" class="philosophy">
+
+  <div class="container">
+
+    <div class="label">
+      EDUCATIONAL PHILOSOPHY
+    </div>
+
+
+    <div class="quote">
+
+      <span>
+        用教育看見孩子
+      </span>
+
+      ・
+
+      用陪伴成就孩子
+
+      ・
+
+      <span>
+        讓生命影響生命
+      </span>
+
+    </div>
+
+
+    <p
+      class="text-center mt-5 mx-auto"
+      style="
+      max-width:1400px;
+      line-height:2;
+      color:#c9d3dd;
+      font-size:1.35rem;
+      ">
+
+      
+      教育不應只是標準化與壓抑的過程，而應協助學生發掘潛能、建立自信，並培養思考與選擇的能力。國小教育除了奠定基本學科能力，更應重視孩子的個別差異與優勢潛能，營造鼓勵創新、自由探索的課堂氛圍，讓學生勇於提問、表達想法，並展現自己的獨特性，使學習成為主動探索與自我實現的歷程。同時，透過多元的學習機會，看見每位孩子的特質與興趣，適時提供資源與支持，陪伴他們找到自己的方向，勇敢朝目標前進。
+
+
+    </p>
+
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+FOOTER
+====================================== -->
+
+<footer>
+
+  <strong>
+    張語宸 JHANG,YU-CHEN
+  </strong>
+
+  <div class="mt-2">
+    Education · International · Leadership
+  </div>
+
+  <div class="mt-3 small">
+    © 2026 JHANG,YU-CHEN. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+<!-- ======================================
+Bootstrap JS
+====================================== -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- ======================================
+同頁導覽功能
+====================================== -->
+
+<script>
+
+function goToSection(sectionId) {
+
+  const section = document.getElementById(sectionId);
+
+  if (section) {
+
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+  }
+
+
+  // 手機版點擊導覽後自動收起選單
+
+  const menu = document.getElementById('menu');
+
+  if (
+    menu &&
+    menu.classList.contains('show')
+  ) {
+
+    const bsCollapse =
+      bootstrap.Collapse.getOrCreateInstance(menu);
+
+    bsCollapse.hide();
+
+  }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
