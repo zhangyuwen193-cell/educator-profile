@@ -6,20 +6,8 @@
   <base target="_top">
 
   <meta charset="UTF-8">
-<script>
-  if (screen.width <= 767) {
-    const viewport = document.querySelector('meta[name="viewport"]');
 
-    const pageWidth = 1200;
-    const scale = screen.width / pageWidth;
-
-    viewport.setAttribute(
-      'content',
-      `width=${pageWidth}, initial-scale=${scale}, minimum-scale=${scale}`
-    );
-  }
-</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1200">
 
   <meta name="description"
         content="張語宸個人教育網站｜科技教育、偏鄉教育、國際教育與教育實踐">
@@ -1113,15 +1101,6 @@ footer strong {
     object-fit: contain !important;
     object-position: center top !important;
   }
-}
-/* 手機版：模擬縮小後的寬版效果 */
-@media (max-width: 767px) {
-
-  body {
-    min-width: 720px !important;
-    zoom: 0.54;
-  }
-
 }
 /* =========================================
    首頁：桌機 / 手機最終控制
