@@ -1315,6 +1315,50 @@ footer strong {
   }
 
 }
+/* =========================================
+   最終修正：桌機首頁資訊一定顯示
+========================================= */
+
+@media screen and (min-width: 768px) {
+
+  .quick-info-desktop {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    position: relative !important;
+    z-index: 10 !important;
+
+    margin-top: 35px !important;
+  }
+
+  .quick-info-desktop .info-row {
+    display: grid !important;
+    grid-template-columns: 42px 70px 1fr !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .quick-info-desktop .info-title,
+  .quick-info-desktop .info-text,
+  .quick-info-desktop .info-icon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .quick-info-mobile {
+    display: none !important;
+  }
+
+  .hero-left {
+    overflow: visible !important;
+  }
+}
 
 </style>
 
