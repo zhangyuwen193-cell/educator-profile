@@ -1,7 +1,4 @@
 # educator-profile
-educator-profile
-├── index.html   ← 你的完整網站程式碼一定要在這裡
-<!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
