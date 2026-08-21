@@ -767,112 +767,210 @@ footer strong {
   }
 }
 /* ========================================
-   手機版最終修正
+   手機版最終版
 ======================================== */
 @media (max-width: 767px) {
 
-  /* 首頁改成上下排列 */
- /* 手機版首頁維持左右並排 */
-.hero .row {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: flex-start !important;
-}
+  /* ---------- 導覽列 ---------- */
 
-.hero-left {
-  width: 58% !important;
-  max-width: 58% !important;
-  flex: 0 0 58% !important;
-  transform: none !important;
-  padding-left: 18px !important;
-  padding-right: 8px !important;
-}
+  .navbar {
+    padding: 8px 0 !important;
+  }
 
-.hero-right {
-  width: 42% !important;
-  max-width: 42% !important;
-  flex: 0 0 42% !important;
-  transform: none !important;
-  padding-left: 5px !important;
-  padding-right: 12px !important;
-  margin-top: 40px !important;
-}
+  .navbar .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
 
-  /* 取消以前的大幅位移 */
+  .navbar-brand {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    margin-right: 12px !important;
+    font-size: 1rem !important;
+  }
+
+  .brand-circle {
+    width: 36px !important;
+    height: 36px !important;
+    margin-right: 6px !important;
+  }
+
+  /* 選單維持橫向，不要直排 */
+  .navbar-collapse {
+    display: block !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .navbar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-nav .nav-item {
+    flex: 0 0 auto !important;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.82rem !important;
+    padding: 8px 8px !important;
+    margin: 0 !important;
+  }
+
+
+  /* ---------- 首頁 ---------- */
+
+  .hero {
+    padding-top: 90px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .hero-container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .hero .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+
+    --bs-gutter-x: 10px !important;
+  }
+
+  /* 左邊文字 */
   .hero-left {
+    width: 60% !important;
+    max-width: 60% !important;
+    flex: 0 0 60% !important;
+
     transform: none !important;
-    padding: 0 20px !important;
+    min-width: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
   }
 
+  /* 右邊照片 */
   .hero-right {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+
     transform: none !important;
-    padding: 0 20px !important;
-    margin-top: 30px !important;
+    min-width: 0 !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-top: 55px !important;
   }
 
-  /* 手機照片 */
-.profile-photo {
-  width: 100% !important;
-  height: 420px !important;
-  max-height: none !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  margin: 0 !important;
-  border-radius: 20px !important;
-}
+  .profile-photo {
+    display: block !important;
+    width: 100% !important;
+    height: 330px !important;
 
-  /* 手機首頁名字 */
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    margin: 0 !important;
+    border-radius: 18px !important;
+  }
+
+
+  /* ---------- 首頁文字大小 ---------- */
+
+  .label {
+    font-size: 0.65rem !important;
+    letter-spacing: 2px !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .label::before {
+    width: 28px !important;
+  }
+
   .hero-name {
-    font-size: 4rem !important;
+    font-size: 3.2rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .english-name {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.2em !important;
+    margin-bottom: 22px !important;
+    white-space: nowrap !important;
   }
 
   .hero-title {
-    font-size: 2rem !important;
+    font-size: 1.55rem !important;
+    line-height: 1.4 !important;
   }
 
   .hero-description {
-    font-size: 1.2rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.8 !important;
   }
 
-  /* 現職、學歷等 */
+
+  /* ---------- 現職／學歷 ---------- */
+
+  .quick-info {
+    margin-top: 25px !important;
+  }
+
   .info-row {
-    grid-template-columns: 30px 55px 1fr !important;
-    column-gap: 8px !important;
+    grid-template-columns: 24px 45px 1fr !important;
+    column-gap: 6px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .info-icon {
+    width: 24px !important;
   }
 
   .info-title {
-    font-size: 1.15rem !important;
+    font-size: 0.95rem !important;
   }
 
   .info-text {
-    font-size: 1.1rem !important;
+    font-size: 0.88rem !important;
+    line-height: 1.7 !important;
     white-space: normal !important;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere !important;
   }
 
-  /* 區塊左右留白 */
+
+  /* ---------- 下方區塊 ---------- */
+
   section .container {
+    max-width: 100% !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
 
-  /* 卡片文字不要過大 */
-  .education-card,
-  .exp-card,
-  .international-card,
-  .award-item,
-  .news-card {
-    font-size: 1.15rem !important;
-  }
-
-  .education-card h4,
-  .exp-card h3,
-  .international-card h3 {
-    font-size: 1.5rem !important;
-  }
-
-  /* 教育見習手機直排 */
+  /* 教育見習手機一張一排 */
   #international .row {
     display: flex !important;
     flex-direction: column !important;
