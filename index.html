@@ -193,18 +193,7 @@ body {
 .hero-right {
   transform: translateX(-20px);
 }
-@media (min-width: 992px) {
 
-  .hero-left {
-    transform:translateX(80px);
-  }
-
-  /* 電腦版照片位置 */
-  .hero-right {
-    transform:translate(-100px, --2000px);
-  }
-
-}
 
 /* ========================================
    首頁個人資訊
@@ -1122,6 +1111,210 @@ footer strong {
   }
 
 }
+/* =========================================
+   首頁：桌機 / 手機最終控制
+========================================= */
+
+/* 預設：手機資訊隱藏 */
+.quick-info-mobile {
+  display: none;
+}
+
+
+/* =========================
+   電腦版
+========================= */
+
+@media (min-width: 992px) {
+
+  .quick-info-desktop {
+    display: block !important;
+  }
+
+  .quick-info-mobile {
+    display: none !important;
+  }
+
+  .hero-left {
+    width: 50% !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+
+    transform: translateX(80px) !important;
+  }
+
+  .hero-right {
+    width: 50% !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+
+    /* 第一個：左右
+       第二個：上下 */
+    transform: translate(-100px, -100px) !important;
+  }
+
+  .profile-photo {
+    width: 70% !important;
+    height: 650px !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    margin-left: auto !important;
+  }
+
+}
+
+
+/* =========================
+   手機版
+========================= */
+
+@media (max-width: 767px) {
+
+  .hero {
+    padding-top: 90px !important;
+    padding-bottom: 25px !important;
+  }
+
+  .hero-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .hero .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+
+    --bs-gutter-x: 10px !important;
+  }
+
+
+  /* 左上文字 */
+  .hero-left {
+    width: 60% !important;
+    max-width: 60% !important;
+    flex: 0 0 60% !important;
+
+    transform: none !important;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+  }
+
+
+  /* 右上照片 */
+  .hero-right {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+
+    transform: none !important;
+
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+
+    margin-top: 55px !important;
+  }
+
+
+  .profile-photo {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-height: none !important;
+
+    object-fit: contain !important;
+    object-position: center top !important;
+
+    margin: 0 !important;
+
+    border-radius: 18px !important;
+  }
+
+
+  /* 左上文字大小 */
+  .hero-name {
+    font-size: 3.2rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .english-name {
+    font-size: .7rem !important;
+    letter-spacing: .2em !important;
+    margin-bottom: 22px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-title {
+    font-size: 1.55rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero-description {
+    font-size: .92rem !important;
+    line-height: 1.8 !important;
+  }
+
+
+  /* 電腦資訊不顯示 */
+  .quick-info-desktop {
+    display: none !important;
+  }
+
+
+  /* 手機資訊全寬 */
+  .quick-info-mobile {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+
+    margin-top: 30px !important;
+
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+
+  .quick-info-mobile .info-row {
+    display: grid !important;
+
+    grid-template-columns:
+      28px
+      55px
+      minmax(0, 1fr) !important;
+
+    column-gap: 8px !important;
+
+    margin-bottom: 18px !important;
+  }
+
+
+  .quick-info-mobile .info-title {
+    font-size: 1rem !important;
+  }
+
+
+  .quick-info-mobile .info-text {
+    font-size: .95rem !important;
+
+    line-height: 1.75 !important;
+
+    white-space: normal !important;
+
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+}
 
 </style>
 
@@ -1243,286 +1436,268 @@ NAVBAR
 HERO
 ====================================== -->
 
+<!-- ======================================
+HERO
+====================================== -->
+
 <header class="hero" id="home">
 
   <div class="container-fluid hero-container">
 
-    <div class="row align-items-center g-5">
+    <div class="row align-items-start g-5">
 
 
-      <!-- ==================================
-           左半部：個人資訊
-      =================================== -->
+      <!-- ================================
+           左側：名字＋理念＋電腦版資訊
+      ================================= -->
 
       <div class="col-6 hero-left">
-
 
         <div class="label">
           EDUCATOR PROFILE
         </div>
 
-
         <h1 class="hero-name">
           張語宸
         </h1>
 
-
         <div class="english-name">
-          JHANG,YU-CHEN 
+          JHANG,YU-CHEN
         </div>
 
-
         <h2 class="hero-title">
-         心存善念
-         盡力而為
+          心存善念 盡力而為
         </h2>
 
-
         <p class="hero-description">
-
           我相信教育不只是知識傳遞，<br>
           而是讓學生看到自己的光芒。
         </p>
 
 
+        <!-- ================================
+             電腦版：現職／學歷／專長／信箱
+        ================================= -->
+
+        <div class="quick-info quick-info-desktop">
+
+          <!-- 現職 -->
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-person"></i>
+            </div>
+
+            <div class="info-title">
+              現職
+            </div>
+
+            <div class="info-text">
+              臺師大PASSION學友會｜會長<br>
+              臺師大科技與工程學院｜學生代表<br>
+              臺師大師資培育會議｜學生代表<br>
+              臺師大學生事務會議｜學生代表<br>
+              臺師大校園景觀規畫小組｜學生代表<br>
+              臺師大教學媒體與應用(教)｜教學助理<br>
+              臺師大職業教育訓練暨生涯規劃(教)｜教學助理<br>
+              臺師大體育(扯鈴)｜教學助理<br>
+              臺師大科技系116級畢業專展｜總務組長<br>
+              臺師大師資生聯會｜顧問(退休會長)<br>
+              臺北市文昌國小扯鈴社｜教練
+            </div>
+
+          </div>
+
+
+          <!-- 學歷 -->
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+
+            <div class="info-title">
+              學歷
+            </div>
+
+            <div class="info-text">
+              國立臺灣師範大學｜科技應用與人力資源發展學系四年級<br>
+              國立臺灣師範大學｜小學師資培育公費生<br>
+              國立臺灣師範大學｜中等二階師培生<br>
+              國立臺灣師範大學｜雙語師資培育生<br>
+              國立臺灣師範大學｜PASSION偏鄉優質教育學分學程 修畢<br>
+              國立中科實驗高級中學<br>
+              臺中市大雅區陽明國民小學
+            </div>
+
+          </div>
+
+
+          <!-- 專長 -->
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-star"></i>
+            </div>
+
+            <div class="info-title">
+              專長
+            </div>
+
+            <div class="info-text">
+              偏鄉教育、扯鈴、跳繩、長跑、健身、自行車
+            </div>
+
+          </div>
+
+
+          <!-- 信箱 -->
+          <div class="info-row">
+
+            <div class="info-icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+
+            <div class="info-title">
+              信箱
+            </div>
+
+            <div class="info-text">
+              <a href="mailto:41271106H@ntnu.edu.tw">
+                41271106H@ntnu.edu.tw
+              </a>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
 
-      <!-- ==================================
-           右半部：只保留這一張大照片
-      =================================== -->
 
-     <div class="col-6 hero-right">
+      <!-- ================================
+           右側照片
+      ================================= -->
+
+      <div class="col-6 hero-right">
 
         <div class="photo-wrapper">
 
           <img
-          src="https://drive.google.com/thumbnail?id=1sSdpO1-4pQKcyrdKAppt0qUFcLQikh1d&sz=w1600"
-          class="profile-photo"
-          alt="張語宸">
+            src="https://drive.google.com/thumbnail?id=1sSdpO1-4pQKcyrdKAppt0qUFcLQikh1d&sz=w1600"
+            class="profile-photo"
+            alt="張語宸">
 
         </div>
 
       </div>
-        <div class="quick-info quick-info-mobile">
-          <!-- ==================================
-             個人資訊
-        =================================== -->
-
-        <div class="quick-info quick-info-desktop">
 
 
-          <!-- 現職 -->
 
-          <div class="info-row">
+      <!-- ================================
+           手機版：全寬資訊
+      ================================= -->
 
-            <div class="info-icon">
-              <i class="bi bi-person"></i>
-            </div>
+      <div class="quick-info quick-info-mobile">
 
-            <div class="info-title">
-              現職
-            </div>
+        <!-- 現職 -->
+        <div class="info-row">
 
-            <div class="info-text">
-
-
-              臺師大PASSION學友會｜會長<br>
-              臺師大科技與工程學院｜學生代表<br>
-              臺師大師資培育會議｜學生代表<br>
-              臺師大學生事務會議｜學生代表<br>
-              臺師大校園景觀規畫小組｜學生代表<br>
-              臺師大教學媒體與應用(教)｜教學助理<br>
-              臺師大職業教育訓練暨生涯規劃(教)｜教學助理<br>
-              臺師大體育(扯鈴)｜教學助理<br>
-              臺師大科技系116級畢業專展｜總務組長<br>
-              臺師大師資生聯會｜顧問(退休會長)<br>
-              臺北市文昌國小扯鈴社｜教練
-
-            </div>
-
-          </div>
-          
-          <!-- 學歷 -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-mortarboard"></i>
-            </div>
-
-            <div class="info-title">
-              學歷
-            </div>
-
-            <div class="info-text">
-              國立臺灣師範大學｜科技應用與人力資源發展學系四年級
-              <br>
-              國立臺灣師範大學｜小學師資培育公費生<br>
-              國立臺灣師範大學｜中等二階師培生<br>
-              國立臺灣師範大學｜雙語師資培育生<br>
-              國立臺灣師範大學｜PASSION偏鄉優質教育學分學程 修畢<br>
-              國立中科實驗高級中學<br>
-              臺中市大雅區陽明國民小學
-              <br>
-            </div>
-
+          <div class="info-icon">
+            <i class="bi bi-person"></i>
           </div>
 
-          <!-- 專長 -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-star"></i>
-            </div>
-
-            <div class="info-title">
-              專長
-            </div>
-
-            <div class="info-text">
-              偏鄉教育、扯鈴、跳繩、長跑、健身、自行車
-            </div>
-
+          <div class="info-title">
+            現職
           </div>
 
-
-          <!-- Email -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-envelope"></i>
-            </div>
-
-            <div class="info-title">
-              信箱
-            </div>
-
-            <div class="info-text">
-
-              <a href="mailto:41271106H@ntnu.edu.tw">
-                41271106H@ntnu.edu.tw
-              </a>
-
-            </div>
-
+          <div class="info-text">
+            臺師大PASSION學友會｜會長<br>
+            臺師大科技與工程學院｜學生代表<br>
+            臺師大師資培育會議｜學生代表<br>
+            臺師大學生事務會議｜學生代表<br>
+            臺師大校園景觀規畫小組｜學生代表<br>
+            臺師大教學媒體與應用(教)｜教學助理<br>
+            臺師大職業教育訓練暨生涯規劃(教)｜教學助理<br>
+            臺師大體育(扯鈴)｜教學助理<br>
+            臺師大科技系116級畢業專展｜總務組長<br>
+            臺師大師資生聯會｜顧問(退休會長)<br>
+            臺北市文昌國小扯鈴社｜教練
           </div>
-
 
         </div>
 
 
+        <!-- 學歷 -->
+        <div class="info-row">
 
-          <!-- 現職 -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-person"></i>
-            </div>
-
-            <div class="info-title">
-              現職
-            </div>
-
-            <div class="info-text">
-
-
-              臺師大PASSION學友會｜會長<br>
-              臺師大科技與工程學院｜學生代表<br>
-              臺師大師資培育會議｜學生代表<br>
-              臺師大學生事務會議｜學生代表<br>
-              臺師大校園景觀規畫小組｜學生代表<br>
-              臺師大教學媒體與應用(教)｜教學助理<br>
-              臺師大職業教育訓練暨生涯規劃(教)｜教學助理<br>
-              臺師大體育(扯鈴)｜教學助理<br>
-              臺師大科技系116級畢業專展｜總務組長<br>
-              臺師大師資生聯會｜顧問(退休會長)<br>
-              臺北市文昌國小扯鈴社｜教練
-
-            </div>
-
-          </div>
-          
-          <!-- 學歷 -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-mortarboard"></i>
-            </div>
-
-            <div class="info-title">
-              學歷
-            </div>
-
-            <div class="info-text">
-              國立臺灣師範大學｜科技應用與人力資源發展學系四年級
-              <br>
-              國立臺灣師範大學｜小學師資培育公費生<br>
-              國立臺灣師範大學｜中等二階師培生<br>
-              國立臺灣師範大學｜雙語師資培育生<br>
-              國立臺灣師範大學｜PASSION偏鄉優質教育學分學程 修畢<br>
-              國立中科實驗高級中學<br>
-              臺中市大雅區陽明國民小學
-              <br>
-            </div>
-
+          <div class="info-icon">
+            <i class="bi bi-mortarboard"></i>
           </div>
 
-          <!-- 專長 -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-star"></i>
-            </div>
-
-            <div class="info-title">
-              專長
-            </div>
-
-            <div class="info-text">
-              偏鄉教育、扯鈴、跳繩、長跑、健身、自行車
-            </div>
-
+          <div class="info-title">
+            學歷
           </div>
 
-
-          <!-- Email -->
-
-          <div class="info-row">
-
-            <div class="info-icon">
-              <i class="bi bi-envelope"></i>
-            </div>
-
-            <div class="info-title">
-              信箱
-            </div>
-
-            <div class="info-text">
-
-              <a href="mailto:41271106H@ntnu.edu.tw">
-                41271106H@ntnu.edu.tw
-              </a>
-
-            </div>
-
+          <div class="info-text">
+            國立臺灣師範大學｜科技應用與人力資源發展學系四年級<br>
+            國立臺灣師範大學｜小學師資培育公費生<br>
+            國立臺灣師範大學｜中等二階師培生<br>
+            國立臺灣師範大學｜雙語師資培育生<br>
+            國立臺灣師範大學｜PASSION偏鄉優質教育學分學程 修畢<br>
+            國立中科實驗高級中學<br>
+            臺中市大雅區陽明國民小學
           </div>
-
 
         </div>
+
+
+        <!-- 專長 -->
+        <div class="info-row">
+
+          <div class="info-icon">
+            <i class="bi bi-star"></i>
+          </div>
+
+          <div class="info-title">
+            專長
+          </div>
+
+          <div class="info-text">
+            偏鄉教育、扯鈴、跳繩、長跑、健身、自行車
+          </div>
+
+        </div>
+
+
+        <!-- 信箱 -->
+        <div class="info-row">
+
+          <div class="info-icon">
+            <i class="bi bi-envelope"></i>
+          </div>
+
+          <div class="info-title">
+            信箱
+          </div>
+
+          <div class="info-text">
+            <a href="mailto:41271106H@ntnu.edu.tw">
+              41271106H@ntnu.edu.tw
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 
   </div>
 
 </header>
-
 <!-- ======================================
 ABOUT
 ====================================== -->
