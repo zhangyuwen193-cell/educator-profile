@@ -1436,7 +1436,71 @@ footer strong {
   }
 
 }
+/* ========================================
+   個人資料展開 / 收合
+======================================== */
 
+.profile-details {
+  display: none;
+}
+
+.profile-details.show {
+  display: block;
+}
+
+
+/* 按鈕區 */
+.profile-toggle-area {
+  padding: 45px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+
+/* 按鈕 */
+.profile-toggle-btn {
+  min-width: 320px;
+
+  padding: 18px 35px;
+
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+
+  background: white;
+  color: var(--navy);
+
+  font-size: 1.25rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+
+/* icon */
+.profile-toggle-btn i {
+  margin-left: 12px;
+  transition: transform .3s;
+}
+
+
+/* hover */
+.profile-toggle-btn:hover {
+  background: var(--navy);
+  color: white;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(31,53,83,.12);
+}
+
+
+/* 展開後箭頭翻轉 */
+.profile-toggle-btn.open i {
+  transform: rotate(180deg);
+}
 </style>
 
 </head>
@@ -1838,6 +1902,32 @@ HERO
   </div>
 
 </header>
+<!-- ======================================
+PROFILE DETAILS TOGGLE
+====================================== -->
+
+<div class="profile-toggle-area">
+
+  <button
+    id="profileToggleBtn"
+    class="profile-toggle-btn"
+    onclick="toggleProfileDetails()">
+
+    <span id="profileToggleText">
+      查看完整個人經歷
+    </span>
+
+    <i
+      id="profileToggleIcon"
+      class="bi bi-chevron-down">
+    </i>
+
+  </button>
+
+</div>
+
+
+<div id="profileDetails" class="profile-details">
 <!-- ======================================
 ABOUT
 ====================================== -->
@@ -2947,6 +3037,7 @@ INTERNATIONAL
   </div>
 
 </section>
+</div>
 <!-- ======================================
 NEWS
 ====================================== -->
@@ -3529,6 +3620,44 @@ Bootstrap JS
 ====================================== -->
 
 <script>
+  function toggleProfileDetails() {
+
+  const details =
+    document.getElementById('profileDetails');
+
+  const button =
+    document.getElementById('profileToggleBtn');
+
+  const text =
+    document.getElementById('profileToggleText');
+
+
+  const isOpen =
+    details.classList.toggle('show');
+
+
+  if (isOpen) {
+
+    text.textContent =
+      '收起完整個人經歷';
+
+    button.classList.add('open');
+
+  } else {
+
+    text.textContent =
+      '查看完整個人經歷';
+
+    button.classList.remove('open');
+
+    button.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+
+  }
+
+}
 
 function goToSection(sectionId) {
 
