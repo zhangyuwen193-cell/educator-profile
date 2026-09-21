@@ -3871,16 +3871,48 @@ Bootstrap JS
 function goToSection(sectionId) {
 
   const section = document.getElementById(sectionId);
+  const details = document.getElementById('profileDetails');
 
   if (section) {
 
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    // 如果目標位於隱藏的個人經歷區域，先自動展開
+    if (
+      details &&
+      details.contains(section) &&
+      !details.classList.contains('show')
+    ) {
+      details.classList.add('show');
+
+      // 同步更新按鈕文字與箭頭
+      document.getElementById('profileToggleText').textContent =
+        '收起完整個人經歷';
+
+      document.getElementById('profileToggleBtn').classList.add('open');
+    }
+
+    // 等瀏覽器完成展開後，再捲動到正確位置
+    requestAnimationFrame(() => {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     });
 
   }
 
+  // 手機版點擊導覽後自動收起選單
+  const menu = document.getElementById('menu');
+
+  if (menu && menu.classList.contains('show')) {
+
+    const bsCollapse =
+      bootstrap.Collapse.getOrCreateInstance(menu);
+
+    bsCollapse.hide();
+
+  }
+
+}
 
   // 手機版點擊導覽後自動收起選單
 
