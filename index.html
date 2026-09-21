@@ -3829,107 +3829,58 @@ Bootstrap JS
 ====================================== -->
 
 <script>
-  function toggleProfileDetails() {
+ <script>
+function toggleProfileDetails() {
+  const details = document.getElementById('profileDetails');
+  const button = document.getElementById('profileToggleBtn');
+  const text = document.getElementById('profileToggleText');
 
-  const details =
-    document.getElementById('profileDetails');
+  if (!details || !button || !text) return;
 
-  const button =
-    document.getElementById('profileToggleBtn');
+  const isOpen = details.classList.toggle('show');
 
-  const text =
-    document.getElementById('profileToggleText');
+  text.textContent = isOpen
+    ? '收起完整個人經歷'
+    : '查看完整個人經歷';
 
+  button.classList.toggle('open', isOpen);
 
-  const isOpen =
-    details.classList.toggle('show');
-
-
-  if (isOpen) {
-
-    text.textContent =
-      '收起完整個人經歷';
-
-    button.classList.add('open');
-
-  } else {
-
-    text.textContent =
-      '查看完整個人經歷';
-
-    button.classList.remove('open');
-
+  if (!isOpen) {
     button.scrollIntoView({
-      behavior:'smooth',
-      block:'center'
+      behavior: 'smooth',
+      block: 'center'
     });
-
   }
-
 }
 
 function goToSection(sectionId) {
-
   const section = document.getElementById(sectionId);
   const details = document.getElementById('profileDetails');
 
-  if (section) {
+  if (!section) return;
 
-    // 如果目標位於隱藏的個人經歷區域，先自動展開
-    if (
-      details &&
-      details.contains(section) &&
-      !details.classList.contains('show')
-    ) {
-      details.classList.add('show');
-
-      // 同步更新按鈕文字與箭頭
-      document.getElementById('profileToggleText').textContent =
-        '收起完整個人經歷';
-
-      document.getElementById('profileToggleBtn').classList.add('open');
-    }
-
-    // 等瀏覽器完成展開後，再捲動到正確位置
-    requestAnimationFrame(() => {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    });
-
-  }
-
-  // 手機版點擊導覽後自動收起選單
-  const menu = document.getElementById('menu');
-
-  if (menu && menu.classList.contains('show')) {
-
-    const bsCollapse =
-      bootstrap.Collapse.getOrCreateInstance(menu);
-
-    bsCollapse.hide();
-
-  }
-
-}
-
-  // 手機版點擊導覽後自動收起選單
-
-  const menu = document.getElementById('menu');
-
+  // 點擊隱藏區塊的捷徑時，自動展開
   if (
-    menu &&
-    menu.classList.contains('show')
+    details &&
+    details.contains(section) &&
+    !details.classList.contains('show')
   ) {
+    details.classList.add('show');
 
-    const bsCollapse =
-      bootstrap.Collapse.getOrCreateInstance(menu);
+    const button = document.getElementById('profileToggleBtn');
+    const text = document.getElementById('profileToggleText');
 
-    bsCollapse.hide();
-
+    if (button) button.classList.add('open');
+    if (text) text.textContent = '收起完整個人經歷';
   }
 
+  // 展開後移動到指定位置
+  setTimeout(function () {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }, 100);
 }
 
 </script>
