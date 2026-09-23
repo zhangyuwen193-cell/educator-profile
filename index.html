@@ -193,7 +193,17 @@ body {
 .hero-right {
   transform: translateX(-20px);
 }
+/* 電腦版：首頁照片縮小 */
+@media (min-width: 992px) {
 
+  .profile-photo {
+    width: 62% !important;
+    height: 540px !important;
+    object-fit: cover !important;
+    border-radius: 28px !important;
+  }
+
+}
 
 /* ========================================
    首頁個人資訊
