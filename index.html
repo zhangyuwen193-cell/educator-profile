@@ -987,22 +987,34 @@ footer strong {
 ======================================== */
 @media (max-width: 767px) {
 
-  nav.navbar {
-    height: 62px !important;
-    min-height: 62px !important;
-    padding: 6px 0 !important;
-    overflow: hidden !important;
+  .hero-left {
+    width: 58% !important;
+    max-width: 58% !important;
+    flex: 0 0 58% !important;
   }
 
-  nav.navbar > .container {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 10px !important;
+  .hero-right {
+    width: 42% !important;
+    max-width: 42% !important;
+    flex: 0 0 42% !important;
+
+    margin-top: 55px !important;
   }
+
+  .profile-photo {
+    width: 95% !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+    object-position: center top !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    border-radius: 16px !important;
+  }
+
+}
 
   /* 左邊 張語宸 */
   nav.navbar .navbar-brand {
