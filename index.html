@@ -1509,6 +1509,387 @@ footer strong {
   }
 
 }
+
+/* ========================================
+   新版固定側欄導覽
+======================================== */
+
+:root {
+  --sidebar-width: 285px;
+}
+
+/* 舊的頂部導覽不再使用 */
+.navbar {
+  display: none !important;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: var(--sidebar-width);
+  height: 100vh;
+
+  padding: 26px 18px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #263f68 0%,
+      #1f365b 58%,
+      #192f50 100%
+    );
+
+  color: white;
+
+  z-index: 2000;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+  box-shadow:
+    10px 0 32px rgba(23,45,76,.10);
+}
+
+.side-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 8px 10px 24px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.12);
+
+  cursor: pointer;
+}
+
+.side-brand-mark {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #d8b45e;
+  color: #243e67;
+
+  font-family:
+    "LXGW WenKai TC",
+    "DFKai-SB",
+    serif;
+
+  font-size: 1.55rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.12);
+}
+
+.side-brand-name {
+  color: white;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+.side-brand-sub {
+  margin-top: 3px;
+
+  color: #afbed3;
+
+  font-size: .69rem;
+  font-weight: 700;
+
+  letter-spacing: .10em;
+}
+
+.side-nav-label {
+  margin: 24px 14px 10px;
+
+  color: #8ea3bf;
+
+  font-size: .73rem;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.side-link,
+.side-group-title {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 0 15px;
+
+  border-radius: 12px;
+
+  color: #dce6f3;
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  transition: .22s ease;
+}
+
+.side-link i,
+.side-group-title i {
+  width: 22px;
+
+  text-align: center;
+
+  font-size: 1.15rem;
+}
+
+.side-link:hover {
+  color: white;
+
+  background:
+    rgba(255,255,255,.07);
+}
+
+.side-link.active {
+  position: relative;
+
+  color: white;
+
+  background: #415f8a;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255,255,255,.035);
+}
+
+.side-link.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 4px;
+
+  border-radius:
+    0 5px 5px 0;
+
+  background: #dfba60;
+}
+
+.side-nav-group {
+  margin: 4px 0 9px;
+  padding: 7px 0 10px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,.035);
+}
+
+.side-group-title {
+  min-height: 42px;
+
+  color: white;
+}
+
+.side-sub-link {
+  position: relative;
+
+  display: block;
+
+  margin-left: 44px;
+
+  padding:
+    8px 12px 8px 17px;
+
+  border-left:
+    1px solid
+    rgba(255,255,255,.14);
+
+  color: #afbed2;
+
+  text-decoration: none;
+
+  font-size: .91rem;
+  font-weight: 650;
+
+  transition: .20s ease;
+}
+
+.side-sub-link:hover,
+.side-sub-link.active {
+  color: #f1d07c;
+}
+
+.side-sub-link.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: -2px;
+  top: 8px;
+  bottom: 8px;
+
+  width: 3px;
+
+  border-radius: 3px;
+
+  background: #dfba60;
+}
+
+.side-footer {
+  margin-top: auto;
+
+  padding: 24px 14px 5px;
+
+  color: #c2cede;
+
+  font-size: .78rem;
+  line-height: 1.7;
+}
+
+.side-footer small {
+  color: #8398b4;
+}
+
+.site-main {
+  margin-left: var(--sidebar-width);
+
+  width:
+    calc(100% - var(--sidebar-width));
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+.mobile-topbar,
+.sidebar-overlay {
+  display: none;
+}
+
+/* 側欄版首頁重新置中 */
+@media (min-width: 992px) {
+
+  .hero {
+    padding-top: 85px !important;
+  }
+
+  .hero-left {
+    transform:
+      translateX(25px) !important;
+  }
+
+  .hero-right {
+    transform:
+      translate(-20px,-70px) !important;
+  }
+
+  .profile-photo {
+    width: 78% !important;
+  }
+
+  section {
+    scroll-margin-top: 20px;
+  }
+}
+
+
+/* ========================================
+   全尺寸固定側欄：手機 / 平板 / 電腦都一直存在
+======================================== */
+
+.side-nav {
+  transform: none !important;
+}
+
+.site-main {
+  margin-left: var(--sidebar-width) !important;
+  width: calc(100% - var(--sidebar-width)) !important;
+  padding-top: 0 !important;
+}
+
+.mobile-topbar,
+.sidebar-overlay {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .side-nav {
+    width: var(--sidebar-width) !important;
+    display: flex !important;
+    transform: none !important;
+  }
+
+  .site-main {
+    margin-left: var(--sidebar-width) !important;
+    width: calc(100% - var(--sidebar-width)) !important;
+    padding-top: 0 !important;
+  }
+
+  .side-brand {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .side-brand-mark {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 1.25rem;
+  }
+
+  .side-brand-name {
+    font-size: 1.15rem;
+  }
+
+  .side-brand-sub {
+    font-size: .6rem;
+  }
+
+  .side-link,
+  .side-group-title {
+    font-size: .92rem;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .side-sub-link {
+    margin-left: 36px;
+    font-size: .84rem;
+  }
+
+  .mobile-topbar,
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
 </style>
 
 </head>
@@ -1517,149 +1898,129 @@ footer strong {
 
 
 <!-- ======================================
-NAVBAR
+SIDE NAVIGATION
 ====================================== -->
 
-<nav class="navbar navbar-expand-lg fixed-top">
+<aside class="side-nav" id="sideNav">
 
-  <div class="container">
+  <div class="side-brand" onclick="goToSection('home')">
+    <div class="side-brand-mark">張</div>
 
-    <a
-      class="navbar-brand"
-      href="javascript:void(0)"
-      onclick="goToSection('home')">
-
-      <span class="brand-circle">
-        張
-      </span>
-
-      張語宸
-
-    </a>
-
-
-    
-
-
-    <div class="navbar-collapse" id="menu">
-
-      <ul class="navbar-nav ms-auto">
-
-
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="goToSection('about')">
-            個人簡介
-          </a>
-        </li>
-
-
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="goToSection('education')">
-            學歷
-          </a>
-        </li>
-
-
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="goToSection('experience')">
-            經歷
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="goToSection('awards')">
-            獲獎與認證
-          </a>
-        </li>
-
-
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="goToSection('international')">
-            教育見習
-          </a>
-        </li>
-
-
-
-
-<!-- 札記 -->
-<li class="nav-item">
-  <a
-    class="nav-link"
-    href="javascript:void(0)"
-    onclick="goToSection('journal')">
-    札記
-  </a>
-</li>
-
-
-<!-- 教育新聞 -->
-<li class="nav-item">
-  <a
-    class="nav-link"
-    href="javascript:void(0)"
-    onclick="goToSection('news')">
-    教育新聞
-  </a>
-</li>
-
-
-<!-- 師大新聞 -->
-<li class="nav-item">
-  <a
-    class="nav-link"
-    href="javascript:void(0)"
-    onclick="goToSection('ntnu-news')">
-    師大新聞
-  </a>
-</li>
-
-
-<!-- 影音專區 -->
-<li class="nav-item">
-  <a
-    class="nav-link"
-    href="javascript:void(0)"
-    onclick="goToSection('videos')">
-    影音專區
-  </a>
-</li>
-
-
-
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="goToSection('philosophy')">
-            教育理念
-          </a>
-        </li>
-
-
-      </ul>
-
+    <div>
+      <div class="side-brand-name">張語宸</div>
+      <div class="side-brand-sub">EDUCATION PORTFOLIO</div>
     </div>
-
   </div>
 
-</nav>
+  <div class="side-nav-label">MAIN MENU</div>
 
+  <nav class="side-menu">
+
+    <a class="side-link active" data-section="home"
+       href="javascript:void(0)"
+       onclick="goToSection('home'); closeSidebar();">
+      <i class="bi bi-house-door"></i>
+      <span>首頁</span>
+    </a>
+
+    <div class="side-nav-group">
+      <div class="side-group-title">
+        <i class="bi bi-person"></i>
+        <span>個人資料</span>
+      </div>
+
+      <a class="side-sub-link" data-section="about"
+         href="javascript:void(0)"
+         onclick="goToSection('about'); closeSidebar();">
+        個人簡介
+      </a>
+
+      <a class="side-sub-link" data-section="education"
+         href="javascript:void(0)"
+         onclick="goToSection('education'); closeSidebar();">
+        學歷
+      </a>
+
+      <a class="side-sub-link" data-section="experience"
+         href="javascript:void(0)"
+         onclick="goToSection('experience'); closeSidebar();">
+        經歷
+      </a>
+
+      <a class="side-sub-link" data-section="awards"
+         href="javascript:void(0)"
+         onclick="goToSection('awards'); closeSidebar();">
+        獲獎與認證
+      </a>
+
+      <a class="side-sub-link" data-section="international"
+         href="javascript:void(0)"
+         onclick="goToSection('international'); closeSidebar();">
+        教育見習
+      </a>
+    </div>
+
+    <a class="side-link" data-section="journal"
+       href="javascript:void(0)"
+       onclick="goToSection('journal'); closeSidebar();">
+      <i class="bi bi-journal-text"></i>
+      <span>札記</span>
+    </a>
+
+    <a class="side-link" data-section="news"
+       href="javascript:void(0)"
+       onclick="goToSection('news'); closeSidebar();">
+      <i class="bi bi-newspaper"></i>
+      <span>教育新聞</span>
+    </a>
+
+    <a class="side-link" data-section="ntnu-news"
+       href="javascript:void(0)"
+       onclick="goToSection('ntnu-news'); closeSidebar();">
+      <i class="bi bi-building"></i>
+      <span>師大新聞</span>
+    </a>
+
+    <a class="side-link" data-section="videos"
+       href="javascript:void(0)"
+       onclick="goToSection('videos'); closeSidebar();">
+      <i class="bi bi-play-btn"></i>
+      <span>影音專區</span>
+    </a>
+
+    <a class="side-link" data-section="philosophy"
+       href="javascript:void(0)"
+       onclick="goToSection('philosophy'); closeSidebar();">
+      <i class="bi bi-lightbulb"></i>
+      <span>教育理念</span>
+    </a>
+
+  </nav>
+
+  <div class="side-footer">
+    <div>JHANG, YU-CHEN</div>
+    <small>Education · Technology · Practice</small>
+  </div>
+
+</aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="mobile-topbar">
+  <button class="mobile-menu-btn"
+          type="button"
+          onclick="toggleSidebar()"
+          aria-label="開啟導覽">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <div class="mobile-brand" onclick="goToSection('home')">
+    <span class="mobile-brand-mark">張</span>
+    <span>張語宸</span>
+  </div>
+</div>
+
+<main class="site-main">
 
 <!-- ======================================
 HERO
@@ -3814,6 +4175,9 @@ FOOTER
 
 </footer>
 
+</main>
+
+
 
 <!-- ======================================
 Bootstrap JS
@@ -3881,6 +4245,118 @@ function goToSection(sectionId) {
     });
   }, 100);
 }
+
+
+
+function toggleSidebar() {
+  const sideNav =
+    document.getElementById('sideNav');
+
+  const overlay =
+    document.getElementById('sidebarOverlay');
+
+  if (!sideNav || !overlay) return;
+
+  sideNav.classList.toggle('open');
+  overlay.classList.toggle('show');
+}
+
+function closeSidebar() {
+  const sideNav =
+    document.getElementById('sideNav');
+
+  const overlay =
+    document.getElementById('sidebarOverlay');
+
+  if (sideNav) {
+    sideNav.classList.remove('open');
+  }
+
+  if (overlay) {
+    overlay.classList.remove('show');
+  }
+}
+
+function setActiveSideLink(sectionId) {
+
+  document
+    .querySelectorAll('[data-section]')
+    .forEach(function(link) {
+
+      link.classList.toggle(
+        'active',
+        link.getAttribute('data-section')
+          === sectionId
+      );
+
+    });
+
+}
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function() {
+
+    const trackedIds = [
+      'home',
+      'about',
+      'education',
+      'experience',
+      'awards',
+      'international',
+      'journal',
+      'news',
+      'ntnu-news',
+      'videos',
+      'philosophy'
+    ];
+
+    const sections =
+      trackedIds
+        .map(function(id) {
+          return document.getElementById(id);
+        })
+        .filter(Boolean);
+
+    const observer =
+      new IntersectionObserver(
+        function(entries) {
+
+          const visible =
+            entries
+              .filter(function(entry) {
+                return entry.isIntersecting;
+              })
+              .sort(function(a, b) {
+                return (
+                  b.intersectionRatio -
+                  a.intersectionRatio
+                );
+              });
+
+          if (visible.length > 0) {
+            setActiveSideLink(
+              visible[0].target.id
+            );
+          }
+
+        },
+        {
+          rootMargin:
+            '-18% 0px -62% 0px',
+
+          threshold:
+            [0.01, 0.15, 0.35]
+        }
+      );
+
+    sections.forEach(function(section) {
+      observer.observe(section);
+    });
+
+  }
+);
+
 
 </script>
 
