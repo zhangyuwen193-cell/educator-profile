@@ -1899,7 +1899,60 @@ footer strong {
     display: none !important;
   }
 }
+/* ========================================
+   最終照片尺寸控制
+======================================== */
 
+/* 電腦版 */
+@media (min-width: 992px) {
+
+  .profile-photo {
+    width: 56% !important;
+    height: 500px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    border-radius: 26px !important;
+  }
+
+}
+
+/* 手機版 */
+@media (max-width: 767px) {
+
+  .hero-right {
+    width: 36% !important;
+    max-width: 36% !important;
+    flex: 0 0 36% !important;
+
+    margin-top: 55px !important;
+  }
+
+  .hero-left {
+    width: 64% !important;
+    max-width: 64% !important;
+    flex: 0 0 64% !important;
+  }
+
+  .profile-photo {
+    width: 82% !important;
+    height: auto !important;
+
+    max-height: none !important;
+
+    object-fit: contain !important;
+    object-position: center top !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    border-radius: 16px !important;
+  }
+
+}
 </style>
 
 </head>
