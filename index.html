@@ -380,7 +380,7 @@ section {
 ======================================== */
 
 .philosophy {
-  background:var(--navy);
+  background:linear-gradient(180deg, #1d3557 0%, #14263f 100%);
   color:white;
 }
 
@@ -393,16 +393,138 @@ section {
   background:#d8bf89;
 }
 
-.quote {
+.student-heading {
   text-align:center;
-  font-size:clamp(1.6rem, 3vw, 2.7rem);
-  font-weight:800;
-  line-height:1.5;
-  white-space:nowrap;
+  margin:22px auto 18px;
 }
 
-.quote span {
-  color:#d8bf89;
+.student-heading h2 {
+  font-size:clamp(2rem, 4vw, 3.3rem);
+  margin-bottom:14px;
+  color:#ffffff;
+}
+
+.student-heading p {
+  max-width:980px;
+  margin:0 auto;
+  font-size:1.2rem;
+  line-height:1.9;
+  color:#d7e1ec;
+}
+
+.student-acronym {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:34px 0 50px;
+}
+
+.student-pill {
+  min-width:88px;
+  padding:12px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 12px 28px rgba(0,0,0,0.18);
+  text-align:center;
+  backdrop-filter:blur(4px);
+}
+
+.student-pill .letter {
+  display:block;
+  font-size:2rem;
+  font-weight:900;
+  line-height:1;
+  color:#f3cd7a;
+}
+
+.student-pill .word {
+  display:block;
+  margin-top:6px;
+  font-size:.88rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  color:#ffffff;
+}
+
+.student-grid {
+  margin-top:8px;
+}
+
+.student-card {
+  height:100%;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:24px;
+  padding:28px 26px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.16);
+}
+
+.student-card-head {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.student-card-letter {
+  flex:0 0 58px;
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  background:#d8bf89;
+  color:#16283f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:900;
+}
+
+.student-card-title small {
+  display:block;
+  color:#f5d99d;
+  letter-spacing:.08em;
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+.student-card-title h3 {
+  margin:0;
+  font-size:1.55rem;
+  color:#ffffff;
+}
+
+.student-card p {
+  margin:0;
+  font-size:1.08rem;
+  line-height:1.9;
+  color:#ecf2f8;
+}
+
+.student-summary {
+  margin:42px auto 0;
+  max-width:1120px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:24px;
+  padding:28px 30px;
+  text-align:center;
+  box-shadow:0 18px 40px rgba(0,0,0,0.14);
+}
+
+.student-summary h4 {
+  color:#f3cd7a;
+  font-size:1.55rem;
+  margin-bottom:14px;
+}
+
+.student-summary p {
+  margin:0;
+  color:#eef4f8;
+  font-size:1.12rem;
+  line-height:2;
 }
 
 
@@ -526,10 +648,56 @@ footer strong {
     white-space: nowrap !important;
   }
 }
-/* 教育哲學內文放大 */
-.philosophy p {
-  font-size: 1.6rem !important;
-  line-height: 2 !important;
+/* 教育理念區塊響應式 */
+@media (max-width: 991px) {
+  .student-heading p {
+    font-size: 1.05rem !important;
+  }
+
+  .student-pill {
+    min-width: 74px;
+    padding: 10px 12px;
+  }
+
+  .student-pill .letter {
+    font-size: 1.65rem;
+  }
+
+  .student-pill .word {
+    font-size: .8rem;
+  }
+
+  .student-card {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .student-card-head {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .student-card-letter {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+    font-size: 1.7rem;
+  }
+
+  .student-card-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .student-card p,
+  .student-summary p {
+    font-size: 1rem !important;
+    line-height: 1.85 !important;
+  }
+
+  .student-summary {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
 }
 
 /* 電腦版：個人簡介內文放大 */
@@ -3672,41 +3840,127 @@ PHILOSOPHY
       EDUCATIONAL PHILOSOPHY
     </div>
 
+    <div class="student-heading">
+      <h2>我的 <span style="color:#f3cd7a;">STUDENT</span> 教育理念</h2>
+      <p>
+        我希望教育不只是傳遞知識，更是陪伴孩子探索自我、發現天賦、勇於實踐、持續發展，
+        最終在安全與尊重的環境中自信茁壯。<br>
+        因此，我以 <strong style="color:#f3cd7a;">STUDENT</strong> 作為自己的教育理念核心。
+      </p>
+    </div>
 
-    <div class="quote">
+    <div class="student-acronym">
+      <div class="student-pill"><span class="letter">S</span><span class="word">SEARCH</span></div>
+      <div class="student-pill"><span class="letter">T</span><span class="word">TALENT</span></div>
+      <div class="student-pill"><span class="letter">U</span><span class="word">USE</span></div>
+      <div class="student-pill"><span class="letter">D</span><span class="word">DEVELOPMENT</span></div>
+      <div class="student-pill"><span class="letter">E</span><span class="word">EMPOWERMENT</span></div>
+      <div class="student-pill"><span class="letter">N</span><span class="word">NURTURE</span></div>
+      <div class="student-pill"><span class="letter">T</span><span class="word">THRIVE</span></div>
+    </div>
 
-      <span>
-        用教育看見孩子
-      </span>
+    <div class="row student-grid g-4">
 
-      ・
+      <div class="col-md-6 col-xl-4">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">S</div>
+            <div class="student-card-title">
+              <small>SEARCH｜探索</small>
+              <h3>探索世界，找到方向</h3>
+            </div>
+          </div>
+          <p>引導學生主動探索世界，找到自己的興趣與方向。</p>
+        </div>
+      </div>
 
-      用陪伴成就孩子
+      <div class="col-md-6 col-xl-4">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">T</div>
+            <div class="student-card-title">
+              <small>TALENT｜天賦</small>
+              <h3>看見優勢與潛能</h3>
+            </div>
+          </div>
+          <p>看見每個孩子不同的優勢與潛能，讓天賦有被發現的機會。</p>
+        </div>
+      </div>
 
-      ・
+      <div class="col-md-6 col-xl-4">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">U</div>
+            <div class="student-card-title">
+              <small>USE｜實踐</small>
+              <h3>讓所學真正用出來</h3>
+            </div>
+          </div>
+          <p>讓所學能實際運用，在做中學、在生活中學。</p>
+        </div>
+      </div>
 
-      <span>
-        讓生命影響生命
-      </span>
+      <div class="col-md-6 col-xl-4">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">D</div>
+            <div class="student-card-title">
+              <small>DEVELOPMENT｜發展</small>
+              <h3>重視成長歷程</h3>
+            </div>
+          </div>
+          <p>重視每位學生的成長歷程，支持他們持續發展。</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">E</div>
+            <div class="student-card-title">
+              <small>EMPOWERMENT｜賦能</small>
+              <h3>給孩子選擇與嘗試</h3>
+            </div>
+          </div>
+          <p>給學生選擇、嘗試與犯錯的空間，培養自主學習的能力。</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">N</div>
+            <div class="student-card-title">
+              <small>NURTURE｜培育</small>
+              <h3>用陪伴建立自信</h3>
+            </div>
+          </div>
+          <p>營造安全、尊重且沒有壓迫感的學習環境，陪伴學生建立自信。</p>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="student-card">
+          <div class="student-card-head">
+            <div class="student-card-letter">T</div>
+            <div class="student-card-title">
+              <small>THRIVE｜茁壯</small>
+              <h3>走向適合自己的道路</h3>
+            </div>
+          </div>
+          <p>教育的最終目的，是讓每個孩子找到適合自己的道路，持續成長並發揮價值。</p>
+        </div>
+      </div>
 
     </div>
 
-
-    <p
-      class="text-center mt-5 mx-auto"
-      style="
-      max-width:1400px;
-      line-height:2;
-      color:#c9d3dd;
-      font-size:1.35rem;
-      ">
-
-      
-      教育不應只是標準化與壓抑的過程，而應協助學生發掘潛能、建立自信，並培養思考與選擇的能力。國小教育除了奠定基本學科能力，更應重視孩子的個別差異與優勢潛能，營造鼓勵創新、自由探索的課堂氛圍，讓學生勇於提問、表達想法，並展現自己的獨特性，使學習成為主動探索與自我實現的歷程。同時，透過多元的學習機會，看見每位孩子的特質與興趣，適時提供資源與支持，陪伴他們找到自己的方向，勇敢朝目標前進。
-
-
-    </p>
-
+    <div class="student-summary">
+      <h4>我相信</h4>
+      <p>
+        每個孩子都值得被理解，也都擁有屬於自己的節奏與光芒。
+        教師不只是知識的傳遞者，更是陪伴孩子探索、發掘、實踐、成長與茁壯的重要引路人。
+      </p>
+    </div>
 
   </div>
 
