@@ -1820,29 +1820,64 @@ footer strong {
 }
 
 /* ========================================
-   手機版側欄：可收合，收起後內容全寬
+   手機版側欄：X 跟著側欄收進去
 ======================================== */
-.mobile-sidebar-toggle {
+.mobile-sidebar-toggle,
+.mobile-sidebar-reopen {
   display: none;
 }
 
 @media (pointer: coarse) and (max-width: 1200px) {
 
-  .mobile-sidebar-toggle {
-    position: fixed;
-    top: 14px;
-    left: calc(var(--sidebar-width) + 12px);
-    z-index: 2200;
+  .side-nav {
+    transition: transform .28s ease !important;
+  }
 
-    width: 48px;
-    height: 48px;
+  /* X：放在側欄品牌區右上角，會跟著側欄一起滑走 */
+  .mobile-sidebar-toggle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+
+    width: 36px;
+    height: 36px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border: 0;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.12);
+    color: #ffffff;
+
+    font-size: 1.15rem;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  .mobile-sidebar-toggle:active {
+    transform: scale(.95);
+  }
+
+  /* 收起後才顯示左上角漢堡鍵 */
+  .mobile-sidebar-reopen {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 2300;
+
+    width: 48px;
+    height: 48px;
+
+    border: 0;
     border-radius: 14px;
+
+    align-items: center;
+    justify-content: center;
 
     background: #263f68;
     color: #ffffff;
@@ -1851,41 +1886,19 @@ footer strong {
     line-height: 1;
 
     box-shadow: 0 10px 28px rgba(23,45,76,.22);
-
-    transition:
-      left .28s ease,
-      background .2s ease,
-      transform .2s ease;
   }
 
-  .mobile-sidebar-toggle:active {
-    transform: scale(.96);
-  }
-
-  /* 手機版側欄改為可滑出 / 收起 */
-  .side-nav {
-    transition: transform .28s ease !important;
-  }
-
-  /* 預設收起 */
   body.mobile-sidebar-collapsed .side-nav {
     transform: translateX(-100%) !important;
   }
 
-  /* 收起時：主要內容直接吃滿整個畫面 */
   body.mobile-sidebar-collapsed .site-main {
     margin-left: 0 !important;
     width: 100% !important;
   }
 
-  /* 收起時：漢堡按鈕回到左上 */
-  body.mobile-sidebar-collapsed .mobile-sidebar-toggle {
-    left: 14px;
-  }
-
-  /* 展開時，按鈕停在側欄右側 */
-  body:not(.mobile-sidebar-collapsed) .mobile-sidebar-toggle {
-    left: calc(var(--sidebar-width) + 12px);
+  body.mobile-sidebar-collapsed .mobile-sidebar-reopen {
+    display: flex;
   }
 }
 
@@ -1894,16 +1907,6 @@ footer strong {
 </head>
 
 <body>
-
-<button
-  id="mobileSidebarToggle"
-  class="mobile-sidebar-toggle"
-  type="button"
-  aria-label="開啟或收起側欄"
-  aria-expanded="false">
-  <i class="bi bi-list"></i>
-</button>
-
 
 
 <!-- ======================================
@@ -1917,6 +1920,15 @@ SIDE NAVIGATION
   aria-label="展開側欄"
   aria-expanded="false">
   <i class="bi bi-chevron-right"></i>
+</button>
+
+<button
+  id="mobileSidebarReopen"
+  class="mobile-sidebar-reopen"
+  type="button"
+  aria-label="展開側欄"
+  aria-expanded="false">
+  <i class="bi bi-list"></i>
 </button>
 
 <aside class="side-nav" id="sideNav">
@@ -1937,6 +1949,16 @@ SIDE NAVIGATION
       aria-expanded="true"
       onclick="event.stopPropagation();">
       <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <button
+      id="mobileSidebarToggle"
+      class="mobile-sidebar-toggle"
+      type="button"
+      aria-label="收起側欄"
+      aria-expanded="true"
+      onclick="event.stopPropagation();">
+      <i class="bi bi-x-lg"></i>
     </button>
   </div>
 
@@ -3937,6 +3959,33 @@ NEWS
 
       </div>
 
+
+      <!-- 教育新聞 6 -->
+      <div class="col-lg-6">
+
+        <a
+          class="news-card"
+          href="https://www.parenting.com.tw/article/6002173"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="news-source">
+            親子天下
+          </div>
+
+          <div class="news-title">
+            逾三成師培生不想當老師！調查揭三大壓力：薪資低、風險高、制度不穩
+          </div>
+
+          <div class="news-more">
+            閱讀報導
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </div>
+
+        </a>
+
+      </div>
+
     </div>
 
   <!-- ======================================
@@ -4560,9 +4609,10 @@ document.addEventListener(
    手機版側欄收合
 ======================================== */
 (function () {
-  const toggleBtn = document.getElementById('mobileSidebarToggle');
+  const closeBtn = document.getElementById('mobileSidebarToggle');
+  const reopenBtn = document.getElementById('mobileSidebarReopen');
 
-  if (!toggleBtn) return;
+  if (!closeBtn || !reopenBtn) return;
 
   const isMobileSidebarMode = function () {
     return window.matchMedia('(pointer: coarse) and (max-width: 1200px)').matches;
@@ -4571,18 +4621,12 @@ document.addEventListener(
   const setCollapsed = function (collapsed) {
     document.body.classList.toggle('mobile-sidebar-collapsed', collapsed);
 
-    const icon = toggleBtn.querySelector('i');
-
-    toggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-
-    if (icon) {
-      icon.className = collapsed ? 'bi bi-list' : 'bi bi-x-lg';
-    }
+    closeBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    reopenBtn.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
   };
 
   const syncSidebarMode = function () {
     if (isMobileSidebarMode()) {
-      /* 手機預設收起，讓內容先全寬顯示 */
       if (!document.body.dataset.mobileSidebarInitialized) {
         setCollapsed(true);
         document.body.dataset.mobileSidebarInitialized = '1';
@@ -4590,24 +4634,26 @@ document.addEventListener(
     } else {
       document.body.classList.remove('mobile-sidebar-collapsed');
       delete document.body.dataset.mobileSidebarInitialized;
-
-      const icon = toggleBtn.querySelector('i');
-      if (icon) icon.className = 'bi bi-list';
-
-      toggleBtn.setAttribute('aria-expanded', 'false');
+      closeBtn.setAttribute('aria-expanded', 'true');
+      reopenBtn.setAttribute('aria-expanded', 'false');
     }
   };
 
-  toggleBtn.addEventListener('click', function () {
+  closeBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+
     if (!isMobileSidebarMode()) return;
 
-    const collapsed =
-      document.body.classList.contains('mobile-sidebar-collapsed');
-
-    setCollapsed(!collapsed);
+    setCollapsed(true);
   });
 
-  /* 點手機側欄選單後，自動收起，讓內容回到全寬 */
+  reopenBtn.addEventListener('click', function () {
+    if (!isMobileSidebarMode()) return;
+
+    setCollapsed(false);
+  });
+
+  /* 點手機側欄選單後自動收起 */
   document.querySelectorAll('.side-link, .side-sub-link').forEach(function (link) {
     link.addEventListener('click', function () {
       if (isMobileSidebarMode()) {
