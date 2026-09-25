@@ -700,6 +700,142 @@ footer strong {
   }
 }
 
+/* STUDENT 最後一格：Thrive 置中 */
+.student-card.thrive-card {
+  text-align: center;
+}
+
+.student-card.thrive-card .student-card-head {
+  justify-content: center;
+}
+
+.student-card.thrive-card .student-card-title {
+  text-align: center;
+}
+
+/* STUDENT 教育理念發展脈絡 */
+.student-process {
+  margin-top: 52px;
+  padding: 34px 28px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.student-process-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.student-process-title h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.student-process-title p {
+  margin: 0;
+  color: #cbd7e3;
+  font-size: 1rem;
+}
+
+.student-process-flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.process-step {
+  flex: 1 1 125px;
+  min-width: 125px;
+  max-width: 175px;
+  padding: 18px 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.15);
+  text-align: center;
+}
+
+.process-step .process-letter {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 10px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d8bf89;
+  color: #16283f;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.process-step strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.process-step span {
+  display: block;
+  color: #f3cd7a;
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+
+.process-arrow {
+  align-self: center;
+  color: #d8bf89;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.student-process-caption {
+  margin: 26px auto 0;
+  max-width: 1150px;
+  text-align: center;
+  color: #edf3f8;
+  font-size: 1.08rem;
+  line-height: 2;
+}
+
+@media (max-width: 767px) {
+  .student-card.thrive-card .student-card-head {
+    flex-direction: column;
+  }
+
+  .student-process {
+    padding: 24px 16px;
+  }
+
+  .student-process-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .process-step {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .process-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+    line-height: 1;
+    padding: 2px 0;
+  }
+
+  .student-process-caption {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+}
+
 /* 電腦版：個人簡介內文放大 */
 @media (min-width: 992px) {
   #about p {
@@ -3940,7 +4076,7 @@ PHILOSOPHY
       </div>
 
       <div class="col-md-12">
-        <div class="student-card">
+        <div class="student-card thrive-card">
           <div class="student-card-head">
             <div class="student-card-letter">T</div>
             <div class="student-card-title">
@@ -3952,6 +4088,74 @@ PHILOSOPHY
         </div>
       </div>
 
+    </div>
+
+    <div class="student-process">
+      <div class="student-process-title">
+        <h3>STUDENT 的成長脈絡</h3>
+        <p>從探索開始，一步一步走向茁壯。</p>
+      </div>
+
+      <div class="student-process-flow">
+        <div class="process-step">
+          <div class="process-letter">S</div>
+          <strong>探索</strong>
+          <span>SEARCH</span>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step">
+          <div class="process-letter">T</div>
+          <strong>發現天賦</strong>
+          <span>TALENT</span>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step">
+          <div class="process-letter">U</div>
+          <strong>實際運用</strong>
+          <span>USE</span>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step">
+          <div class="process-letter">D</div>
+          <strong>持續發展</strong>
+          <span>DEVELOPMENT</span>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step">
+          <div class="process-letter">E</div>
+          <strong>獲得自主能力</strong>
+          <span>EMPOWERMENT</span>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step">
+          <div class="process-letter">N</div>
+          <strong>陪伴培育</strong>
+          <span>NURTURE</span>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step">
+          <div class="process-letter">T</div>
+          <strong>最終茁壯</strong>
+          <span>THRIVE</span>
+        </div>
+      </div>
+
+      <div class="student-process-caption">
+        探索 Search → 發現天賦 Talent → 實際運用 Use → 持續發展 Development →
+        獲得自主能力 Empowerment → 陪伴培育 Nurture → 最終茁壯 Thrive。
+      </div>
     </div>
 
     <div class="student-summary">
