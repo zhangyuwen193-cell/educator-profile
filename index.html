@@ -1779,6 +1779,100 @@ footer strong {
   }
 }
 
+
+/* ========================================
+   電腦版側欄：可收合，收起後內容全寬
+======================================== */
+.desktop-sidebar-toggle {
+  display: none;
+}
+
+@media (min-width: 992px) {
+
+  .desktop-sidebar-toggle {
+    position: fixed;
+    top: 18px;
+    left: calc(var(--sidebar-width) + 14px);
+    z-index: 2300;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 14px;
+
+    background: #263f68;
+    color: #ffffff;
+
+    font-size: 1.25rem;
+    line-height: 1;
+
+    box-shadow: 0 10px 28px rgba(23,45,76,.20);
+
+    cursor: pointer;
+
+    transition:
+      left .28s ease,
+      transform .2s ease,
+      background .2s ease;
+  }
+
+  .desktop-sidebar-toggle:hover {
+    background: #314c6e;
+  }
+
+  .desktop-sidebar-toggle:active {
+    transform: scale(.96);
+  }
+
+  .side-nav,
+  .site-main {
+    transition:
+      transform .28s ease,
+      margin-left .28s ease,
+      width .28s ease !important;
+  }
+
+  /* 電腦版收起側欄 */
+  body.desktop-sidebar-collapsed .side-nav {
+    transform: translateX(-100%) !important;
+  }
+
+  /* 收起後主要內容改成全寬 */
+  body.desktop-sidebar-collapsed .site-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 收起後按鈕移回左側 */
+  body.desktop-sidebar-collapsed .desktop-sidebar-toggle {
+    left: 14px;
+  }
+
+  /* 展開時按鈕固定在側欄右側 */
+  body:not(.desktop-sidebar-collapsed) .desktop-sidebar-toggle {
+    left: calc(var(--sidebar-width) + 14px);
+  }
+
+  /* 收起側欄時，首頁內容可以真正利用新增寬度 */
+  body.desktop-sidebar-collapsed .hero-container,
+  body.desktop-sidebar-collapsed #about .container,
+  body.desktop-sidebar-collapsed #education .container,
+  body.desktop-sidebar-collapsed #experience .container,
+  body.desktop-sidebar-collapsed #awards .container,
+  body.desktop-sidebar-collapsed #international .container,
+  body.desktop-sidebar-collapsed #journal .container,
+  body.desktop-sidebar-collapsed #news .container,
+  body.desktop-sidebar-collapsed #videos .container,
+  body.desktop-sidebar-collapsed #philosophy .container {
+    max-width: 1900px !important;
+  }
+}
+
 </style>
 
 </head>
@@ -1794,6 +1888,14 @@ footer strong {
   <i class="bi bi-list"></i>
 </button>
 
+<button
+  id="desktopSidebarToggle"
+  class="desktop-sidebar-toggle"
+  type="button"
+  aria-label="收起或展開側欄"
+  aria-expanded="true">
+  <i class="bi bi-chevron-left"></i>
+</button>
 
 
 <!-- ======================================
@@ -4491,6 +4593,54 @@ document.addEventListener(
 
   window.addEventListener('resize', syncSidebarMode);
   syncSidebarMode();
+})();
+
+
+/* ========================================
+   電腦版側欄收合
+======================================== */
+(function () {
+  const toggleBtn = document.getElementById('desktopSidebarToggle');
+
+  if (!toggleBtn) return;
+
+  const isDesktopMode = function () {
+    return window.matchMedia('(min-width: 992px)').matches;
+  };
+
+  const setDesktopCollapsed = function (collapsed) {
+    document.body.classList.toggle('desktop-sidebar-collapsed', collapsed);
+
+    const icon = toggleBtn.querySelector('i');
+
+    toggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+
+    if (icon) {
+      icon.className = collapsed
+        ? 'bi bi-chevron-right'
+        : 'bi bi-chevron-left';
+    }
+  };
+
+  toggleBtn.addEventListener('click', function () {
+    if (!isDesktopMode()) return;
+
+    const collapsed =
+      document.body.classList.contains('desktop-sidebar-collapsed');
+
+    setDesktopCollapsed(!collapsed);
+  });
+
+  window.addEventListener('resize', function () {
+    if (!isDesktopMode()) {
+      document.body.classList.remove('desktop-sidebar-collapsed');
+
+      const icon = toggleBtn.querySelector('i');
+      if (icon) icon.className = 'bi bi-chevron-left';
+
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
 })();
 
 </script>
