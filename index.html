@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
@@ -1814,6 +1815,7 @@ footer strong {
   body.desktop-sidebar-collapsed #journal .container,
   body.desktop-sidebar-collapsed #news .container,
   body.desktop-sidebar-collapsed #videos .container,
+  body.desktop-sidebar-collapsed #stickers .container,
   body.desktop-sidebar-collapsed #philosophy .container {
     max-width: 1900px !important;
   }
@@ -1899,6 +1901,97 @@ footer strong {
 
   body.mobile-sidebar-collapsed .mobile-sidebar-reopen {
     display: flex;
+  }
+}
+
+
+/* ========================================
+   貼圖小舖
+======================================== */
+.sticker-shop {
+  background:#ffffff;
+}
+
+.sticker-shop .container {
+  max-width:1800px;
+}
+
+.sticker-shop-intro {
+  max-width:900px;
+}
+
+.sticker-card {
+  height:100%;
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:34px;
+  box-shadow:0 14px 36px rgba(31,53,83,.08);
+  transition:.28s ease;
+}
+
+.sticker-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 22px 50px rgba(31,53,83,.13);
+}
+
+.sticker-card-icon {
+  width:72px;
+  height:72px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:22px;
+  background:#f2ecdf;
+  color:var(--gold);
+  font-size:2rem;
+}
+
+.sticker-card h3 {
+  margin-bottom:12px;
+  color:var(--navy);
+  font-size:1.8rem;
+  font-weight:800;
+}
+
+.sticker-card p {
+  margin-bottom:26px;
+  color:var(--muted);
+  font-size:1.1rem;
+  line-height:1.8;
+}
+
+.sticker-shop-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 20px;
+  border-radius:999px;
+  background:var(--navy);
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:800;
+  transition:.22s ease;
+}
+
+.sticker-shop-btn:hover {
+  background:var(--gold);
+  color:#ffffff;
+  transform:translateY(-2px);
+}
+
+@media (max-width:767px) {
+  .sticker-card {
+    padding:24px 20px;
+  }
+
+  .sticker-card h3 {
+    font-size:1.45rem;
+  }
+
+  .sticker-card p {
+    font-size:1rem;
   }
 }
 
@@ -2036,6 +2129,13 @@ SIDE NAVIGATION
        onclick="goToSection('videos');">
       <i class="bi bi-play-btn"></i>
       <span>影音專區</span>
+    </a>
+
+    <a class="side-link" data-section="stickers"
+       href="javascript:void(0)"
+       onclick="goToSection('stickers');">
+      <i class="bi bi-chat-heart"></i>
+      <span>貼圖小舖</span>
     </a>
 
     <a class="side-link" data-section="philosophy"
@@ -4223,6 +4323,81 @@ VIDEOS
 </section>
 
 
+
+<!-- ======================================
+STICKER SHOP
+====================================== -->
+
+<section id="stickers" class="sticker-shop">
+  <div class="container">
+
+    <div class="label">
+      LINE STICKER SHOP
+    </div>
+
+    <h2 class="section-title">
+      貼圖小舖
+    </h2>
+
+    <p class="section-description sticker-shop-intro mb-5">
+      把「很好欸」變成日常對話的一部分。歡迎到 LINE 貼圖小舖看看「張笑長」系列貼圖。
+    </p>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <div class="sticker-card">
+          <div class="sticker-card-icon">
+            <i class="bi bi-chat-heart"></i>
+          </div>
+
+          <h3>很好欸～張笑長</h3>
+
+          <p>
+            「張笑長」第一彈 LINE 貼圖，收錄各種「很好欸」系列日常反應，
+            適合聊天、回覆與各種生活情境使用。
+          </p>
+
+          <a
+            class="sticker-shop-btn"
+            href="https://line.me/S/sticker/36737052/?lang=zh-Hant&utm_source=gnsh_stickerDetail"
+            target="_blank"
+            rel="noopener noreferrer">
+            前往 LINE 貼圖小舖
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="sticker-card">
+          <div class="sticker-card-icon">
+            <i class="bi bi-chat-heart-fill"></i>
+          </div>
+
+          <h3>很好欸～張笑長2.0</h3>
+
+          <p>
+            「張笑長」第二彈 LINE 貼圖，延續原本角色與「很好欸」主題，
+            加入更多表情與對話情境。
+          </p>
+
+          <a
+            class="sticker-shop-btn"
+            href="https://line.me/S/sticker/36826314/?lang=zh-Hant&utm_source=gnsh_stickerDetail"
+            target="_blank"
+            rel="noopener noreferrer">
+            前往 LINE 貼圖小舖
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- ======================================
 PHILOSOPHY
 ====================================== -->
@@ -4554,6 +4729,7 @@ document.addEventListener(
       'news',
       'ntnu-news',
       'videos',
+      'stickers',
       'philosophy'
     ];
 
